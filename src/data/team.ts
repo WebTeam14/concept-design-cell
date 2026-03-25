@@ -13,23 +13,23 @@ export interface Member {
 export const teamMembers: Member[] = [
   {
     id: "1",
-    name: "Rajiv Gurav",
+    name: "Director",
     role: "Founder & Principal Architect",
-    bio: "With over 20 years of experience, Rajiv leads the firm with a vision for sustainable and innovative architectural solutions.",
+    bio: "With over 20 years of experience, Director leads the firm with a vision for sustainable and innovative architectural solutions.",
     image: team1,
   },
   {
     id: "2",
-    name: "Amrita Shah",
+    name: "Architect",
     role: "Senior Architect",
-    bio: "Amrita specializes in residential design, blending contemporary aesthetics with functional living spaces.",
+    bio: "ABC specializes in residential design, blending contemporary aesthetics with functional living spaces.",
     image: team2,
   },
   {
     id: "3",
-    name: "Vikram Patil",
+    name: "Interior Designer",
     role: "Interior Design Lead",
-    bio: "Vikram brings spaces to life with his keen eye for detail, materials, and textures.",
+    bio: "Test brings spaces to life with his keen eye for detail, materials, and textures.",
     image: team3,
   },
 ];

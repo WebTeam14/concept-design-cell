@@ -22,24 +22,21 @@ export default function ContactSection() {
       <div ref={ref} className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p
-            className={`text-sm font-medium tracking-widest uppercase text-primary mb-3 ${
-              isVisible ? "animate-fade-up" : "opacity-0"
-            }`}
+            className={`text-sm font-medium tracking-widest uppercase text-primary mb-3 ${isVisible ? "animate-fade-up" : "opacity-0"
+              }`}
           >
             Contact
           </p>
           <h2
-            className={`font-display text-3xl md:text-4xl font-bold text-balance ${
-              isVisible ? "animate-fade-up" : "opacity-0"
-            }`}
+            className={`font-display text-3xl md:text-4xl font-bold text-balance ${isVisible ? "animate-fade-up" : "opacity-0"
+              }`}
             style={{ animationDelay: "0.1s" }}
           >
             Let's Start a New Project
           </h2>
           <p
-            className={`mt-4 text-section-dark-foreground/60 max-w-lg mx-auto text-pretty ${
-              isVisible ? "animate-fade-up" : "opacity-0"
-            }`}
+            className={`mt-4 text-section-dark-foreground/60 max-w-lg mx-auto text-pretty ${isVisible ? "animate-fade-up" : "opacity-0"
+              }`}
             style={{ animationDelay: "0.2s" }}
           >
             Contact us and lay the foundation for a new and successful relationship.
@@ -69,8 +66,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold text-sm mb-1">Email</h4>
-                <a href="mailto:info@conceptdesigncell.com" className="text-section-dark-foreground/60 hover:text-primary transition-colors text-sm">
-                  info@conceptdesigncell.com
+                <a href="mailto:demo@gmail.com" className="text-section-dark-foreground/60 hover:text-primary transition-colors text-sm">
+                  demo@gmail.com
                 </a>
               </div>
             </div>

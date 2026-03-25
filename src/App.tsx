@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,11 +23,10 @@ const MainContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Show preloader on every route change
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 500); // 👈 Change this to adjust how long the loader stays visible (in ms)
+    }, 500);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
@@ -36,8 +35,10 @@ const MainContent = () => {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader key="preloader" />}
       </AnimatePresence>
+
       <CustomCursor />
       <ScrollToTop />
+
       <AnimatePresence mode="popLayout">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Index />} />
@@ -59,9 +60,12 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+
+        {/* ✅ HashRouter fixes GitHub Pages routing */}
+        <HashRouter>
           <MainContent />
-        </BrowserRouter>
+        </HashRouter>
+
       </TooltipProvider>
     </QueryClientProvider>
   );

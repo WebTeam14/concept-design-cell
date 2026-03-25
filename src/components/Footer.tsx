@@ -9,14 +9,14 @@ export default function Footer() {
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-1">
         <svg width="100%" height="100%" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
           <motion.g
-            animate={{ 
+            animate={{
               x: ["-2%", "2%", "-2%"],
               y: ["-1%", "1%", "-1%"]
             }}
-            transition={{ 
-              duration: 25, 
-              repeat: Infinity, 
-              ease: "linear" 
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
             }}
             className="opacity-[0.03]"
           >
@@ -57,8 +57,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-white/50 leading-loose max-w-sm font-light">
-              The company principle of Concept Design Cell is the collective conception. 
-              From the very beginning, the practice has believed in the virtues of exchange, 
+              The company principle of Concept Design Cell is the collective conception.
+              From the very beginning, the practice has believed in the virtues of exchange,
               crossing ideas, common effort, shared knowledge and enthusiasm.
             </p>
           </div>
@@ -81,8 +81,8 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary transition-colors">
                   <Mail size={14} className="text-primary" />
                 </div>
-                <a href="mailto:info@conceptdesigncell.com" className="text-sm font-light text-white/60 hover:text-white transition-colors">
-                  info@conceptdesigncell.com
+                <a href="mailto:demo@gmail.com" className="text-sm font-light text-white/60 hover:text-white transition-colors">
+                  demo@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-4 group">
@@ -122,7 +122,7 @@ export default function Footer() {
           <p className="text-[10px] font-medium tracking-[0.3em] text-white/20 uppercase text-center md:text-left">
             CONCEPT DESIGN CELL (C) {new Date().getFullYear()} ALL RIGHTS RESERVED.
           </p>
-          
+
           <div className="flex items-center gap-6">
             <a href="#" className="text-white/30 hover:text-primary transition-colors">
               <Facebook size={16} />
