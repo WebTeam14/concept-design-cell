@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.ico";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -54,14 +55,24 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
-        <Link to="/" className="flex flex-col leading-none" onClick={() => setIsOpen(false)}>
+
+       <Link to="/" onClick={() => setIsOpen(false)}>
+          <img
+            src={logo}
+            alt="Concept Design Cell"
+            className="h-20 w-auto object-contain"
+          />
+        </Link>
+
+
+        {/* <Link to="/" className="flex flex-col leading-none" onClick={() => setIsOpen(false)}>
           <span className="font-display text-xl font-bold tracking-wide text-primary">
             CONCEPT
           </span>
           <span className="text-[10px] font-sans font-medium tracking-[0.3em] text-primary-foreground/70 uppercase">
             Design Cell
           </span>
-        </Link>
+        </Link> */}
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">

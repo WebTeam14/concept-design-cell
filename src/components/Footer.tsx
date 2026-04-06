@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.ico";  
 
 export default function Footer() {
   return (
@@ -48,14 +49,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16">
           {/* Column 1: Philosophy */}
           <div className="space-y-6">
-            <Link to="/" className="flex flex-col leading-none group">
+            <Link to="/" className="inline-block group">
+              <img
+                src={logo}
+                alt="Concept Design Cell"
+                className="h-32 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-200"
+              />
+            </Link>
+
+            {/* <Link to="/" className="flex flex-col leading-none group">
               <span className="font-display text-2xl font-bold tracking-wide text-primary transition-colors group-hover:text-primary/80">
                 CONCEPT
               </span>
               <span className="text-[10px] font-sans font-medium tracking-[0.3em] text-white/50 uppercase">
                 Design Cell
               </span>
-            </Link>
+            </Link> */}
             <p className="text-sm text-white/50 leading-loose max-w-sm font-light">
               The company principle of Concept Design Cell is the collective conception.
               From the very beginning, the practice has believed in the virtues of exchange,
