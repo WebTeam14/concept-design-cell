@@ -28,7 +28,7 @@ const Preloader = () => {
           transition={{ delay: 0.2 }}
           className="font-display text-base font-bold tracking-[0.4em] text-foreground/80 uppercase"
         >
-          CONCEPT
+          CONCEPT CELL DESIGN
         </motion.span>
       </div>
     </motion.div>

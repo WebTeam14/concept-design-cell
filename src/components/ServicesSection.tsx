@@ -9,17 +9,17 @@ const services = [
   },
   {
     icon: School,
-    title: "Institutional Services",
+    title: "Institutional",
     desc: "Designing civic and community landmarks that serve the public with dignity and efficiency.",
   },
   {
     icon: GraduationCap,
-    title: "Educational Services",
+    title: "Educational",
     desc: "State-of-the-art schools and learning centers designed to inspire curiosity and academic excellence.",
   },
   {
     icon: Hammer,
-    title: "Redevelopment Services",
+    title: "Redevelopment ",
     desc: "Transforming existing structures through modern upgrades, structural enhancements, and creative repurposing.",
   },
 ];
