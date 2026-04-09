@@ -64,7 +64,7 @@ export default function HeroSection() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 w-full px-4 max-w-5xl mx-auto flex flex-col items-center justify-center text-center mt-20">
+      <div className="relative z-10 w-full px-4 max-w-5xl mx-auto flex flex-col items-center justify-center text-center mt-24 md:mt-28 lg:mt-32">
         <AnimatePresence mode="wait">
           <motion.div key={current} className="flex flex-col items-center">
             <div className="overflow-hidden mb-6 py-2 px-4">
@@ -114,9 +114,8 @@ export default function HeroSection() {
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              current === idx ? "w-10 bg-white" : "w-4 bg-white/40 hover:bg-white/60"
-            }`}
+            className={`h-1.5 transition-all duration-500 rounded-full ${current === idx ? "w-10 bg-white" : "w-4 bg-white/40 hover:bg-white/60"
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}

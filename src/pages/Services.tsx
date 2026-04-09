@@ -12,7 +12,7 @@ export default function Services() {
         <Navbar />
         <PageHeader 
           title="Our Services"
-          description="From conceptual design to project management, we offer a wide range of architectural services tailored to your vision."
+          description="Specialized architectural expertise across institutional, educational, and high-impact redevelopment projects."
         />
         <ServicesSection />
         <ClientLogoSlider />

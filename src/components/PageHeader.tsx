@@ -16,7 +16,7 @@ export default function PageHeader({
   backText = "Back to Home" 
 }: PageHeaderProps) {
   return (
-    <div className="relative overflow-hidden bg-foreground py-28 md:py-36">
+    <div className="relative overflow-hidden bg-foreground pt-36 pb-20 md:pt-48 md:pb-32">
       {/* Background Animated SVG Text (Prague Style) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-30">
         <svg width="100%" height="100%" viewBox="0 0 1000 300" preserveAspectRatio="xMinYMid meet">

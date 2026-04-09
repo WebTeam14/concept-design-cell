@@ -1,4 +1,4 @@
-import { Compass, Home, Building2, PenTool, TreePine, HardHat, ArrowRight } from "lucide-react";
+import { Compass, School, GraduationCap, Hammer, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
@@ -8,29 +8,19 @@ const services = [
     desc: "Comprehensive design solutions from concept sketches to detailed construction drawings.",
   },
   {
-    icon: Home,
-    title: "Residential Projects",
-    desc: "Bespoke homes and villas designed around your lifestyle, comfort, and aesthetic vision.",
+    icon: School,
+    title: "Institutional Services",
+    desc: "Designing civic and community landmarks that serve the public with dignity and efficiency.",
   },
   {
-    icon: Building2,
-    title: "Commercial Spaces",
-    desc: "Functional and striking workplaces, retail environments, and mixed-use developments.",
+    icon: GraduationCap,
+    title: "Educational Services",
+    desc: "State-of-the-art schools and learning centers designed to inspire curiosity and academic excellence.",
   },
   {
-    icon: PenTool,
-    title: "Interior Design",
-    desc: "Curated interiors that balance beauty with purpose, from material selection to furniture layout.",
-  },
-  {
-    icon: TreePine,
-    title: "Landscape Design",
-    desc: "Outdoor spaces that complement architecture and create harmonious environments.",
-  },
-  {
-    icon: HardHat,
-    title: "Project Management",
-    desc: "End-to-end oversight ensuring projects are delivered on time, on budget, and on vision.",
+    icon: Hammer,
+    title: "Redevelopment Services",
+    desc: "Transforming existing structures through modern upgrades, structural enhancements, and creative repurposing.",
   },
 ];
 
@@ -54,9 +44,8 @@ export default function ServicesSection() {
               </p>
             </div>
             <h2
-              className={`font-display text-4xl md:text-5xl font-light text-foreground text-balance leading-tight ${
-                isVisible ? "animate-fade-up" : "opacity-0"
-              }`}
+              className={`font-display text-4xl md:text-5xl font-light text-foreground text-balance leading-tight ${isVisible ? "animate-fade-up" : "opacity-0"
+                }`}
               style={{ animationDelay: "0.1s" }}
             >
               Elevating spaces through bold <span className="font-semibold italic">vision</span> and flawless execution.
@@ -73,9 +62,8 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className={`group relative p-10 md:p-14 border-t border-r border-border/20 last:border-r-0 hover:bg-background transition-colors duration-500 cursor-pointer ${
-                  isVisible ? "animate-fade-up" : "opacity-0"
-                }`}
+                className={`group relative p-10 md:p-14 border-t border-r border-border/20 last:border-r-0 hover:bg-background transition-colors duration-500 cursor-pointer ${isVisible ? "animate-fade-up" : "opacity-0"
+                  }`}
                 style={{ animationDelay: `${0.2 + i * 0.1}s` }}
               >
                 <div className="mb-8 text-primary">
