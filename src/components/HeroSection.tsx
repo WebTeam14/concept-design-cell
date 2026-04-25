@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import home from "@/assets/home.png";
 import heroBg2 from "@/assets/hero-sketch-2.png";
 import heroBg3 from "@/assets/project-1.jpg";
 
 const slides = [
   {
     id: 1,
-    image: heroBg,
+    image: home,
     title: "Innovative Architecture for Tomorrow",
     subtitle: "Designing spaces that inspire, endure, and elevate lifestyles.",
     link: "#contact",
@@ -61,10 +61,11 @@ export default function HeroSection() {
             className={`w-full h-full object-cover ${slides[current].isPhoto ? 'grayscale contrast-125 brightness-110' : ''}`}
           />
           <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent opacity-80" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 w-full px-4 max-w-5xl mx-auto flex flex-col items-center justify-center text-center mt-24 md:mt-28 lg:mt-32">
+      <div className="relative z-10 w-full px-4 max-w-5xl mx-auto flex flex-col items-center justify-center text-center mt-40 md:mt-56 lg:mt-64">
         <AnimatePresence mode="wait">
           <motion.div key={current} className="flex flex-col items-center">
             <div className="overflow-hidden mb-6 py-2 px-4">

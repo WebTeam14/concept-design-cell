@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { completedProjects, Project } from "@/data/projects";
-import ProjectImageSlider from "@/components/ProjectImageSlider";
+import { useNavigate } from "react-router-dom";
+import { completedProjects } from "@/data/projects";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,7 +8,7 @@ import PageHeader from "@/components/PageHeader";
 
 export default function CompletedProjects() {
   const { ref, isVisible } = useScrollReveal(0.05);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const navigate = useNavigate();
 
   return (
     <PageWrapper>
@@ -22,51 +21,37 @@ export default function CompletedProjects() {
 
         {/* Grid */}
         <div ref={ref} className="container mx-auto px-4 py-20 md:py-28">
-          <div className="grid sm:grid-cols-2 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {completedProjects.map((project, i) => (
               <div
                 key={project.id}
-                className={`group cursor-pointer ${
+                className={`group cursor-pointer relative aspect-square overflow-hidden ${
                   isVisible ? "animate-fade-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => navigate(`/projects/${project.id}`)}
               >
-                <div className="overflow-hidden mb-4">
-                  <img
-                    src={project.images[0]}
-                    alt={project.title}
-                    className="w-full h-[280px] md:h-[340px] object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="flex items-baseline justify-between mb-1">
-                  <h3 className="font-display text-xl font-semibold text-foreground">
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700"
+                />
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center">
+                  <h3 className="font-display text-2xl font-bold tracking-widest text-white uppercase mb-4">
                     {project.title}
                   </h3>
-                  <span className="text-xs text-muted-foreground tracking-wider uppercase">
-                    {project.year}
-                  </span>
+                  <div className="w-12 h-[1px] bg-primary mb-4" />
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/80">
+                    {project.category}
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  {project.category} · {project.location}
-                </p>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                  {project.description}
-                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Slider Modal */}
-        {selectedProject && (
-          <ProjectImageSlider
-            images={selectedProject.images}
-            title={selectedProject.title}
-            open={!!selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
         <Footer />
       </div>
     </PageWrapper>

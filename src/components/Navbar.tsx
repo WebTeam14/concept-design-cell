@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Search, Globe } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/ConceptCellDesgin-Logo-removebg-preview.png";
 
 const navLinks = [
@@ -18,18 +19,16 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -47,7 +46,6 @@ export default function Navbar() {
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     setDropdownOpen(false);
-    setMobileDropdownOpen(false);
     if (href.startsWith("/#") && isHome) {
       const id = href.replace("/#", "");
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -55,167 +53,162 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-md border-b border-border ${isOpen ? "bg-background" : ""}`}>
-      <div className={`container mx-auto flex items-center justify-between transition-all duration-300 px-4 lg:px-8 ${isOpen ? "flex-row-reverse" : "flex-row"
-        } ${scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
-        }`}>
-
-        <Link to="/" onClick={() => setIsOpen(false)} className={`flex items-center h-full transition-all duration-300 ${isOpen ? "opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto" : "opacity-100 pointer-events-auto"
-          }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
+      scrolled ? "pt-2 px-4 md:px-8 lg:px-12" : "pt-4 md:pt-6 px-4 md:px-8 lg:px-12"
+    }`}>
+      <div className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 py-2.5 transition-all duration-500 shadow-xl ${
+        isOpen ? "rounded-t-[32px] rounded-b-none shadow-2xl" : "rounded-full shadow-lg hover:shadow-xl"
+      } bg-white/95 backdrop-blur-xl border border-black/5`}>
+        
+        {/* Logo */}
+        <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center shrink-0 group">
           <img
             src={logo}
             alt="Concept Design Cell"
-            className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-10 md:h-12" : "h-12 md:h-16 lg:h-20"
-              }`}
+            className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-all duration-500 group-hover:scale-105"
           />
         </Link>
 
-
-        {/* <Link to="/" className="flex flex-col leading-none" onClick={() => setIsOpen(false)}>
-          <span className="font-display text-xl font-bold tracking-wide text-primary">
-            CONCEPT
-          </span>
-          <span className="text-[10px] font-sans font-medium tracking-[0.3em] text-primary-foreground/70 uppercase">
-            Design Cell
-          </span>
-        </Link> */}
-
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-4 lg:gap-8 h-full">
-          {navLinks.map((link) =>
-            link.dropdown ? (
-              <li
-                key={link.href}
-                className="relative h-full flex items-center"
-                ref={dropdownRef}
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
-              >
-                <button
-                  className="flex items-center gap-1 text-sm font-medium tracking-wide transition-colors duration-200 uppercase h-full text-foreground hover:text-primary"
-                >
-                  {link.label}
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""
-                      }`}
-                  />
-                </button>
-                {dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-52 bg-background border border-border shadow-xl py-2 animate-fade-up">
-                    {link.dropdown.map((sub) => (
-                      <Link
-                        key={sub.href}
-                        to={sub.href}
-                        onClick={() => handleNavClick(sub.href)}
-                        className="block px-5 py-2.5 text-sm text-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      >
-                        {sub.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </li>
-            ) : (
-              <li key={link.href} className="flex items-center h-full">
-                {link.href.startsWith("/#") ? (
-                  isHome ? (
-                    <a
-                      href={link.href}
-                      onClick={() => handleNavClick(link.href)}
-                      className="text-sm font-medium tracking-wide transition-colors duration-200 uppercase text-foreground hover:text-primary"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.href}
-                      className="text-sm font-medium tracking-wide transition-colors duration-200 uppercase text-foreground hover:text-primary"
-                    >
-                      {link.label}
-                    </Link>
-                  )
-                ) : (
-                  <Link
-                    to={link.href}
-                    className="text-sm font-medium tracking-wide transition-colors duration-200 uppercase text-foreground hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            )
-          )}
-        </ul>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden transition-all duration-300 active:scale-95 text-foreground hover:text-primary"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-background border-t border-border shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300">
-          <ul className="flex flex-col">
-            {navLinks.map((link) =>
+        {/* Desktop Nav - Centered Links */}
+        <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
+          <ul className="flex items-center gap-6 xl:gap-10">
+            {navLinks.slice(0, -1).map((link) =>
               link.dropdown ? (
-                <li key={link.href} className="border-b border-border last:border-0">
+                <li
+                  key={link.href}
+                  className="relative group py-2"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
+                >
                   <button
-                    onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                    className="flex items-center justify-between w-full py-4 px-6 text-sm font-semibold tracking-widest text-foreground hover:text-primary transition-colors uppercase"
+                    className="flex items-center gap-1.5 text-[13px] font-bold tracking-widest text-black/70 hover:text-black transition-all uppercase group-hover:scale-105"
                   >
                     {link.label}
                     <ChevronDown
-                      size={16}
-                      className={`transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180 text-primary" : "text-foreground/40"}`}
+                      size={14}
+                      className={`transition-transform duration-500 ${dropdownOpen ? "rotate-180" : ""}`}
                     />
                   </button>
-                  {mobileDropdownOpen && (
-                    <div className="bg-muted/30 py-1 border-t border-border/50">
+                  
+                  {/* Dropdown Menu */}
+                  <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 bg-white border border-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-[24px] py-4 overflow-hidden z-[100]`}>
+                    <div className="flex flex-col">
                       {link.dropdown.map((sub) => (
                         <Link
                           key={sub.href}
                           to={sub.href}
                           onClick={() => handleNavClick(sub.href)}
-                          className="flex items-center justify-between py-3.5 px-10 text-xs font-medium tracking-wider text-foreground/70 hover:text-primary transition-colors uppercase border-b border-border/30 last:border-0"
+                          className="block px-8 py-4 text-[12px] font-bold tracking-[0.12em] text-neutral-600 hover:text-black hover:bg-neutral-50 transition-all uppercase border-l-4 border-transparent hover:border-black"
                         >
                           {sub.label}
-                          <ChevronDown size={14} className="-rotate-90 opacity-40" />
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </li>
               ) : (
-                <li key={link.href} className="border-b border-border last:border-0">
-                  {link.href.startsWith("/#") && isHome ? (
-                    <a
-                      href={link.href}
-                      onClick={() => handleNavClick(link.href)}
-                      className="block py-4 px-6 text-sm font-semibold tracking-widest text-foreground hover:text-primary transition-colors uppercase"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block py-4 px-6 text-sm font-semibold tracking-widest text-foreground hover:text-primary transition-colors uppercase"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    className="text-[13px] font-bold tracking-widest text-black/70 hover:text-black transition-all uppercase hover:scale-105 inline-block"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               )
             )}
           </ul>
         </div>
-      )}
+
+        {/* Desktop Right Side - Language, Search, Contact */}
+        <div className="hidden lg:flex items-center gap-6 shrink-0">
+          <div className="flex items-center gap-1.5 text-black/60 hover:text-black cursor-pointer text-[12px] font-bold tracking-wider transition-colors">
+            <Globe size={18} strokeWidth={2.5} />
+            <span>EN</span>
+          </div>
+          
+          <button className="text-black/60 hover:text-black p-2 transition-all hover:scale-110">
+            <Search size={20} strokeWidth={2.5} />
+          </button>
+
+          <Link
+            to="/contact"
+            className="bg-black text-white px-9 py-3.5 rounded-full text-[12px] font-bold tracking-[0.2em] uppercase hover:bg-neutral-800 transition-all shadow-lg hover:shadow-black/30 hover:-translate-y-0.5 active:translate-y-0"
+          >
+            Contact us
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="flex lg:hidden items-center gap-4">
+          <button className="text-black/60 p-2 hover:scale-110 transition-transform">
+            <Search size={20} strokeWidth={2.5} />
+          </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-black hover:text-black/70 p-2 transition-all active:scale-90"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="lg:hidden mx-auto max-w-[1400px] bg-white/98 backdrop-blur-xl border-t border-black/5 rounded-b-[32px] shadow-2xl overflow-hidden"
+          >
+            <ul className="flex flex-col py-6">
+              {navLinks.map((link) => (
+                <li key={link.href} className="border-b border-black/[0.03] last:border-0">
+                  {link.dropdown ? (
+                    <>
+                      <div className="flex items-center justify-between py-4 px-10 text-[13px] font-bold tracking-[0.15em] text-black/80 uppercase">
+                        {link.label}
+                      </div>
+                      <div className="bg-neutral-50 py-3">
+                        {link.dropdown.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            onClick={() => handleNavClick(sub.href)}
+                            className="flex items-center justify-between py-4 px-14 text-[11px] font-bold tracking-[0.12em] text-neutral-500 hover:text-black transition-colors uppercase"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block py-5 px-10 text-[13px] font-bold tracking-[0.15em] text-black/80 hover:text-black transition-colors uppercase"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+              <li className="px-10 pt-8 pb-4">
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full bg-black text-white text-center py-5 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase shadow-xl"
+                >
+                  Contact us
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
