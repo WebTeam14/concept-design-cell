@@ -4,24 +4,20 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const services = [
   {
     icon: Compass,
-    title: "Architectural Design",
-    desc: "Comprehensive design solutions from concept sketches to detailed construction drawings.",
+    title: "Architectural Design Consultancy",
+    desc: "Comprehensive design solutions from concept to completion, emphasizing functionality, sustainability, and contextual aesthetics.",
   },
   {
     icon: School,
-    title: "Institutional",
-    desc: "Designing civic and community landmarks that serve the public with dignity and efficiency.",
+    title: "Liaisoning / Statutory Approvals",
+    desc: "Expertise in preparing and submitting approval drawings, coordinating with planning authorities, and managing clearances such as Building Permission, Environmental, Fire, and related NOCs.",
   },
   {
     icon: GraduationCap,
-    title: "Educational",
-    desc: "State-of-the-art schools and learning centers designed to inspire curiosity and academic excellence.",
+    title: "Redevelopment Consultancy",
+    desc: "Expertise in preparing and submitting approval drawings, coordinating with planning authorities, and managing clearances such as Building Permission, Environmental, Fire, and related NOCs.",
   },
-  {
-    icon: Hammer,
-    title: "Redevelopment ",
-    desc: "Transforming existing structures through modern upgrades, structural enhancements, and creative repurposing.",
-  },
+
 ];
 
 export default function ServicesSection() {
@@ -52,7 +48,7 @@ export default function ServicesSection() {
             </h2>
           </div>
           <p className={`text-muted-foreground/80 font-light max-w-sm text-sm md:text-base leading-relaxed ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
-            We provide a holistic approach to design, merging engineering precision with timeless aesthetics to create enduring landmarks.
+            Our firm provides end-to-end professional services covering all stages of architectural and project development. With a multidisciplinary approach, we integrate design innovation, technical expertise, and regulatory compliance to deliver projects that are functional, sustainable, and aesthetically refined.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.ico";  
+import logo from "../assets/logo.ico";
 
 export default function Footer() {
   return (
@@ -83,7 +83,7 @@ export default function Footer() {
                   <Phone size={14} className="text-primary" />
                 </div>
                 <a href="tel:+919876543210" className="text-sm font-light text-white/60 hover:text-white transition-colors">
-                  +91 98765 43210
+                  +91 7400453511 / +91  9820291011
                 </a>
               </li>
               <li className="flex items-center gap-4 group">
@@ -91,7 +91,7 @@ export default function Footer() {
                   <Mail size={14} className="text-primary" />
                 </div>
                 <a href="mailto:demo@gmail.com" className="text-sm font-light text-white/60 hover:text-white transition-colors">
-                  demo@gmail.com
+                  concept_designcell@yahoo.co.in
                 </a>
               </li>
               <li className="flex items-start gap-4 group">
@@ -99,9 +99,10 @@ export default function Footer() {
                   <MapPin size={14} className="text-primary" />
                 </div>
                 <address className="not-italic text-sm font-light text-white/60 leading-relaxed">
-                  Studio #401, 4th Floor, Platinum Square,<br />
-                  Next to Creative Gardens, CBD Belapur,<br />
-                  Navi Mumbai - 400614
+                  CONCEPT DESIGN CELL <br />
+                  1208, BWing , Shelton Saphhire , <br />
+                  Plot No.18 & 19, Sector -15 , CBD  Belapur , Navi Mumbai-400614 <br />
+
                 </address>
               </li>
             </ul>

@@ -56,16 +56,16 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
       scrolled ? "pt-2 px-4 md:px-8 lg:px-12" : "pt-4 md:pt-6 px-4 md:px-8 lg:px-12"
     }`}>
-      <div className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 py-2.5 transition-all duration-500 shadow-xl ${
+      <div className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 py-1 transition-all duration-500 shadow-xl ${
         isOpen ? "rounded-t-[32px] rounded-b-none shadow-2xl" : "rounded-full shadow-lg hover:shadow-xl"
       } bg-white/95 backdrop-blur-xl border border-black/5`}>
         
         {/* Logo */}
-        <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center shrink-0 group">
+        <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center shrink-0 group py-1">
           <img
             src={logo}
             alt="Concept Design Cell"
-            className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+            className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-110"
           />
         </Link>
 

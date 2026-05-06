@@ -15,7 +15,7 @@ export default function AboutSection() {
 
       <div ref={ref} className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-12 gap-16 md:gap-24 items-center">
-          
+
           {/* Text Content */}
           <div className={`md:col-span-5 ${isVisible ? "opacity-100 animate-slide-right" : "opacity-0"}`}>
             <div className="flex items-center gap-4 mb-6">
@@ -24,20 +24,21 @@ export default function AboutSection() {
                 Who We Are
               </p>
             </div>
-            
+
             <h2 className="font-display text-4xl md:text-5xl font-light text-foreground mb-8 leading-[1.2] text-balance">
-              Made with <span className="font-semibold italic">Love</span> & Precision
+              We design <span className="font-semibold italic"> spaces with practical purpose.</span>
             </h2>
-            
+
             <p className="text-muted-foreground/90 font-light leading-relaxed mb-6 text-pretty text-lg">
-              Our team takes over everything, from idea and concept development to realization.
-              We believe in traditions and incorporate them within our innovations.
+
+              As architects, we focus on simplicity, clarity, and impact—creating environments that are functional, elegant, and enduring to reflect the client’s vision.
+
             </p>
-            <p className="text-muted-foreground/80 font-light leading-relaxed mb-10 text-pretty">
+            {/* <p className="text-muted-foreground/80 font-light leading-relaxed mb-10 text-pretty">
               Every project is a collaboration between our visionary architects and our clients'
               aspirations. We transform concepts into living, breathing environments that define
               how people experience the world around them.
-            </p>
+            </p> */}
 
             <a
               href="#contact"
@@ -45,7 +46,7 @@ export default function AboutSection() {
             >
               Discover More
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:translate-x-2 transition-transform duration-300">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
           </div>

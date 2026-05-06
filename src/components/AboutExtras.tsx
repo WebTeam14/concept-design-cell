@@ -36,12 +36,12 @@ function VisionMission() {
             {
               label: "Vision",
               text:
-                "Our vision is to ensure a safe and sustainable future for all our clients. Through our utmost priority to their needs, we build a better, more sustainable future together — one structure at a time.",
+                "We design spaces with practical purpose.As architects, we focus on simplicity, clarity, and impact—creating environments that are functional, elegant, and enduring to reflect the client’s vision.",
             },
             {
               label: "Mission",
               text:
-                "We design and build structures that not only withstand the test of time but enrich the lives of their residents and communities. A successful future is a sustainable one — and that is what every design we create reflects.",
+                "To collaborate closely with clients to transform their vision into elegant, functional, and enduring spaces through precision and innovation.",
             },
           ].map((item, i) => (
             <motion.div
@@ -66,9 +66,9 @@ function VisionMission() {
 // ─── 2. Timeline ─────────────────────────────────────────────────────────────
 const milestones = [
   {
-    year: "2010",
+    year: "2002",
     title: "Initial Years",
-    desc: "Founded with a clear vision to bring innovative architectural design to Gujarat.",
+    desc: "To Build trust through transparency, collaboration, and delivering value within budget and timelines. ",
   },
   {
     year: "2013",
@@ -78,17 +78,17 @@ const milestones = [
   {
     year: "2016",
     title: "Team Growth",
-    desc: "Expanded our team of qualified professionals and relocated to a larger studio space.",
+    desc: "to Build trust through transparency, collaboration, and delivering value within budget and timelines. ",
   },
   {
     year: "2019",
     title: "Office Expansion",
-    desc: "Opened a second office to serve a growing clientele across multiple districts.",
+    desc: "Expanding the practice as Principal Architect, leading and shaping redevelopment-focused projects in collaboration with Urban Analysis Consultancy Services.",
   },
   {
     year: "2023",
     title: "Milestones Achieved",
-    desc: "Over 100 projects delivered, cementing our position as a leading design firm in the region.",
+    desc: "to Build trust through transparency, collaboration, and delivering value within budget and timelines. ",
   },
 ];
 
@@ -128,8 +128,8 @@ function Timeline() {
 
                   <div
                     className={`ml-12 md:ml-0 md:w-[45%] ${isLeft
-                        ? "md:pr-8 md:text-right"
-                        : "md:ml-auto md:pl-8 md:text-left"
+                      ? "md:pr-8 md:text-right"
+                      : "md:ml-auto md:pl-8 md:text-left"
                       }`}
                   >
                     <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase block mb-1">

@@ -56,7 +56,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-sm mb-1">Phone</h4>
                 <a href="tel:+919999999999" className="text-section-dark-foreground/60 hover:text-primary transition-colors text-sm">
-                  (+91) 99999 99999
+                  +91 7400453511 /  +91  9820291011
                 </a>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-sm mb-1">Email</h4>
                 <a href="mailto:demo@gmail.com" className="text-section-dark-foreground/60 hover:text-primary transition-colors text-sm">
-                  demo@gmail.com
+                  concept_designcell@yahoo.co.in
                 </a>
               </div>
             </div>
@@ -78,7 +78,10 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-sm mb-1">Office</h4>
                 <p className="text-section-dark-foreground/60 text-sm">
-                  Architecture Avenue, Design District
+                  CONCEPT DESIGN CELL <br />
+                  1208, BWing , Shelton Saphhire , <br />
+                  Plot No.18 & 19, Sector -15 , CBD  Belapur , Navi Mumbai-400614
+
                 </p>
               </div>
             </div>
