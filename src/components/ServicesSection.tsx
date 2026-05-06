@@ -79,6 +79,14 @@ export default function ServicesSection() {
             );
           })}
         </div>
+
+        {/* Closing Paragraph */}
+        <div className={`mt-20 text-center max-w-4xl mx-auto ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.6s" }}>
+          <p className="text-muted-foreground/90 font-light text-lg md:text-xl leading-relaxed italic">
+            "With extensive experience in diverse project typologies, we ensure every design aligns with technical standards, client vision, and urban regulations, resulting in well-executed and enduring built environments."
+          </p>
+          <div className="w-16 h-px bg-primary/30 mx-auto mt-8"></div>
+        </div>
       </div>
     </section>
   );
