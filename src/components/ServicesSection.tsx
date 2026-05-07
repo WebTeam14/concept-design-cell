@@ -15,7 +15,7 @@ const services = [
   {
     icon: GraduationCap,
     title: "Redevelopment Consultancy",
-    desc: "Expertise in preparing and submitting approval drawings, coordinating with planning authorities, and managing clearances such as Building Permission, Environmental, Fire, and related NOCs.",
+    desc: "Specialized services for housing and mixed-use redevelopment projects, including feasibility studies, planning, tendering, cost management, and execution coordination.",
   },
 
 ];

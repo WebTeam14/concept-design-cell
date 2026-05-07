@@ -1,15 +1,14 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useEffect, useState } from "react";
 
-function AnimatedNumber({ target, label, delay }: { target: number; label: string; delay: number }) {
+function AnimatedNumber({ target, label, delay, suffix = "" }: { target: number; label: string; delay: number; suffix?: string }) {
   const { ref, isVisible } = useScrollReveal(0.3);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!isVisible) return;
     const timeout = setTimeout(() => {
-      let start = 0;
-      const duration = 2000;
+      const duration = 3000;
       const startTime = performance.now();
       const step = (now: number) => {
         const progress = Math.min((now - startTime) / duration, 1);
@@ -24,12 +23,12 @@ function AnimatedNumber({ target, label, delay }: { target: number; label: strin
   }, [isVisible, target, delay]);
 
   return (
-    <div ref={ref} className="text-center flex flex-col items-center justify-center py-8">
-      <div className="font-display text-6xl md:text-7xl lg:text-8xl font-light text-white mb-4 tracking-tighter">
-        {count}
+    <div ref={ref} className="text-center flex flex-col items-center justify-center py-8 md:py-12 px-4">
+      <div className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white mb-4 tracking-tighter">
+        {count}{suffix}
       </div>
       <div className="w-6 h-[1px] bg-primary/40 mb-4"></div>
-      <div className="text-xs font-semibold tracking-[0.25em] uppercase text-white/50">
+      <div className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-white/50 max-w-[150px]">
         {label}
       </div>
     </div>
@@ -38,10 +37,8 @@ function AnimatedNumber({ target, label, delay }: { target: number; label: strin
 
 export default function StatsSection() {
   const stats = [
-    { target: 57, label: "Projects Completed" },
-    { target: 86, label: "Happy Clients" },
-    { target: 94, label: "Working Hours (K)" },
-    { target: 12, label: "Awards Won" },
+    { target: 200, label: "Projects Completed", suffix: "+" },
+    { target: 40, label: "Happy Clients", suffix: "+" },
   ];
 
   return (
@@ -58,9 +55,22 @@ export default function StatsSection() {
           <div className="w-8 h-[1px] bg-primary/30"></div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10 border-t border-b border-white/10">
+        <div className="flex flex-wrap justify-center border-t border-b border-white/10">
           {stats.map((stat, i) => (
-            <AnimatedNumber key={stat.label} target={stat.target} label={stat.label} delay={i * 150} />
+            <div 
+              key={stat.label} 
+              className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border-white/10 
+                ${i % 2 === 0 ? 'sm:border-r' : 'sm:border-r-0 md:border-r'} 
+                ${i === stats.length - 1 ? 'md:border-r-0' : ''}
+                border-b sm:border-b-0 last:border-b-0`}
+            >
+              <AnimatedNumber 
+                target={stat.target} 
+                label={stat.label} 
+                delay={i * 150} 
+                suffix={stat.suffix}
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -65,11 +65,7 @@ export default function Footer() {
                 Design Cell
               </span>
             </Link> */}
-            <p className="text-sm text-white/50 leading-loose max-w-sm font-light">
-              The company principle of Concept Design Cell is the collective conception.
-              From the very beginning, the practice has believed in the virtues of exchange,
-              crossing ideas, common effort, shared knowledge and enthusiasm.
-            </p>
+
           </div>
 
           {/* Column 2: Get In Touch */}

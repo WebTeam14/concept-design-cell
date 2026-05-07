@@ -36,7 +36,7 @@ function VisionMission() {
             {
               label: "Vision",
               text:
-                "We design spaces with practical purpose.As architects, we focus on simplicity, clarity, and impact—creating environments that are functional, elegant, and enduring to reflect the client’s vision.",
+                "To be recognized for delivering distinctive, high-quality architecture that defines modern living",
             },
             {
               label: "Mission",
@@ -70,15 +70,11 @@ const milestones = [
     title: "Initial Years",
     desc: "To Build trust through transparency, collaboration, and delivering value within budget and timelines. ",
   },
-  {
-    year: "2013",
-    title: "Architectural Beginnings",
-    desc: "Completed our first landmark residential and commercial projects, building our reputation.",
-  },
+
   {
     year: "2016",
     title: "Team Growth",
-    desc: "to Build trust through transparency, collaboration, and delivering value within budget and timelines. ",
+    desc: "Growing from individual expertise to a collaborative network of architects, engineers, and technical specialists",
   },
   {
     year: "2019",
@@ -88,7 +84,7 @@ const milestones = [
   {
     year: "2023",
     title: "Milestones Achieved",
-    desc: "to Build trust through transparency, collaboration, and delivering value within budget and timelines. ",
+    desc: "Earned the confidence of prominent clients such as Arihant Superstrure LTD , Godrej Properties ,TODAY Global Builders , SUN _Builders & Developers ,Mitkar Group ,SARA Reality ,ashiyana housing.",
   },
 ];
 
@@ -166,37 +162,9 @@ function Philosophy() {
           How We Think
         </motion.p>
 
-        <motion.h2
-          {...fadeUp(0.1)}
-          className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-16"
-        >
-          Our Philosophy
-        </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-          {[
-            {
-              title: "Design Philosophy",
-              body: "Every great design begins with problem identification and thorough analysis. We stay current with global construction trends and local context so we can respond precisely to our clients' needs.",
-            },
-            {
-              title: "Management Philosophy",
-              body: "Architecture is both an art and a science. We blend creative expression with disciplined execution to ensure quality and timely delivery.",
-            },
-          ].map((item, i) => (
-            <motion.div key={item.title} {...fadeUp(0.1 + i * 0.1)}>
-              <div className="w-8 h-px bg-primary mb-6" />
 
-              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-5">
-                {item.title}
-              </h3>
 
-              <p className="text-muted-foreground leading-relaxed">
-                {item.body}
-              </p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -208,7 +176,6 @@ export default function AboutExtras() {
     <>
       <VisionMission />
       <Timeline />
-      <Philosophy />
     </>
   );
 }

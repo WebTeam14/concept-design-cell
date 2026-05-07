@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import home from "@/assets/home.png";
-import heroBg2 from "@/assets/hero-sketch-2.png";
+import heroBg2 from "@/assets/Slider2.jpeg";
 import heroBg3 from "@/assets/project-1.jpg";
 
 const slides = [
@@ -45,48 +45,48 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-background">
+    <section id="home" className="relative h-[80vh] sm:h-[85vh] md:h-screen min-h-[500px] w-full flex items-center justify-center overflow-hidden bg-[#111111]">
       <AnimatePresence initial={false}>
         <motion.div
           key={current}
           className="absolute inset-0 w-full h-full"
-          initial={{ opacity: 0, scale: 1.1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, transition: { duration: 1.2 } }}
           transition={{ duration: 1.8, ease: [0.33, 1, 0.68, 1] }}
         >
           <img
             src={slides[current].image}
-            alt="Architectural sketch"
-            className={`w-full h-full object-cover ${slides[current].isPhoto ? 'grayscale contrast-125 brightness-110' : ''}`}
+            alt={slides[current].title}
+            className={`w-full h-full object-cover object-center ${slides[current].isPhoto ? 'grayscale contrast-125 brightness-110' : ''}`}
           />
-          <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-black/40 md:bg-black/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 opacity-90" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 w-full px-4 max-w-5xl mx-auto flex flex-col items-center justify-center text-center mt-40 md:mt-56 lg:mt-64">
+      <div className="relative z-10 w-full px-4 max-w-5xl mx-auto flex flex-col items-center justify-center text-center h-full pt-20">
         <AnimatePresence mode="wait">
-          <motion.div key={current} className="flex flex-col items-center">
-            <div className="overflow-hidden mb-6 py-2 px-4">
+          <motion.div key={current} className="flex flex-col items-center w-full">
+            <div className="overflow-hidden mb-4 sm:mb-6 py-2 px-4">
               <motion.h1
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0, transition: { duration: 0.4 } }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white"
+                className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white text-balance"
               >
                 {slides[current].title}
               </motion.h1>
             </div>
 
-            <div className="overflow-hidden mb-10">
+            <div className="overflow-hidden mb-8 sm:mb-10 px-4">
               <motion.p
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0, transition: { duration: 0.4 } }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl text-white/80 font-sans max-w-2xl mx-auto"
+                className="text-sm sm:text-lg md:text-xl text-white/80 font-sans max-w-2xl mx-auto text-balance"
               >
                 {slides[current].subtitle}
               </motion.p>
@@ -97,10 +97,11 @@ export default function HeroSection() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.3 } }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+              className="px-4"
             >
               <a
                 href={slides[current].link}
-                className="inline-block bg-primary text-primary-foreground font-semibold text-sm tracking-widest uppercase px-10 py-4 hover:brightness-110 transition-all duration-300 active:scale-[0.97] border border-transparent hover:border-primary-foreground/20"
+                className="inline-block bg-primary text-primary-foreground font-semibold text-xs sm:text-sm tracking-widest uppercase px-8 sm:px-10 py-3 sm:py-4 hover:brightness-110 transition-all duration-300 active:scale-[0.97] border border-transparent hover:border-primary-foreground/20"
               >
                 {slides[current].cta}
               </a>
