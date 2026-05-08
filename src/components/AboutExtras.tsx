@@ -187,7 +187,7 @@ function Philosophy() {
             <motion.div
               key={item.title}
               {...fadeUp(0.15 + i * 0.1)}
-              className="border border-background/10 p-8 hover:border-primary transition-colors duration-500 group"
+              className="border border-background/20 p-8 hover:border-primary transition-colors duration-500 group"
             >
               <h3 className="text-primary text-xs font-bold tracking-[0.4em] uppercase mb-4 group-hover:translate-x-2 transition-transform duration-300">
                 {item.title}

@@ -13,17 +13,18 @@ export default function ClientLogoSlider() {
     <section className="py-12 md:py-20 bg-background overflow-hidden border-t border-b border-border/20">
       <div className="container mx-auto px-4 mb-8 text-center">
         <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
-          Our Valued Clients
+          OUR VALUED CLIENTS
         </h2>
         <div className="w-16 h-0.5 bg-primary/40 mx-auto mt-4"></div>
       </div>
-      
+
       {/* Marquee Wrapper */}
-      <div className="relative w-full flex overflow-x-hidden pt-8 pb-4 bg-muted/30">
+      <div className="relative w-full flex overflow-x-hidden py-12 bg-foreground">
         <div className="flex w-max animate-marquee space-x-12 md:space-x-24 px-12 md:px-24 items-center">
+
           {clientLogos.map((logo, index) => (
-            <div 
-              key={`logo-${index}`} 
+            <div
+              key={`logo-${index}`}
               className="w-[120px] md:w-[160px] flex-shrink-0"
             >
               <img
@@ -36,8 +37,8 @@ export default function ClientLogoSlider() {
           ))}
           {/* Duplicate set for seamless continuous scrolling */}
           {clientLogos.map((logo, index) => (
-            <div 
-              key={`logo-dup-${index}`} 
+            <div
+              key={`logo-dup-${index}`}
               className="w-[120px] md:w-[160px] flex-shrink-0"
             >
               <img

@@ -37,58 +37,67 @@ export default function ProjectDetail() {
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
 
-        {/* Gallery Grid */}
-        <div className="pt-48 pb-12 md:pt-64">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            {project.images.map((image, index) => (
-              <div key={index} className="aspect-square overflow-hidden group border-[0.5px] border-border/5">
-                <img
-                  src={image}
-                  alt={`${project.title} - ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Project Info Section */}
-        <div className="container mx-auto px-4 md:px-8 py-20 border-t border-border/10">
-          <div className="grid md:grid-cols-12 gap-12 items-start">
+        <div className="container mx-auto px-4 md:px-8 py-32">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
             
-            {/* Project Name (Left) */}
-            <div className="md:col-span-5">
-              <h1 className="font-display text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none text-foreground">
-                {project.title}
-              </h1>
+            {/* Gallery (Left) */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {project.images.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className={`group relative border border-border/40 p-2 hover:border-primary transition-colors duration-500 overflow-hidden ${
+                      index === 0 ? "md:col-span-2 aspect-video md:aspect-[16/10]" : "aspect-square"
+                    }`}
+                  >
+                    <div className="w-full h-full overflow-hidden">
+                      <img
+                        src={image}
+                        alt={`${project.title} - ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Vertical Divider (Hidden on mobile) */}
-            <div className="hidden md:block md:col-span-1 h-full w-px bg-border/20 mx-auto" />
+            {/* Info Sidebar (Right) */}
+            <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
+              <div className="space-y-12">
+                <div>
+                  <h1 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-tight mb-4">
+                    {project.title}
+                  </h1>
+                  <div className="w-12 h-1 bg-primary"></div>
+                </div>
 
-            {/* Project Details (Right) */}
-            <div className="md:col-span-6 space-y-8">
-              <div className="grid grid-cols-1 gap-6">
-                <div className="space-y-1">
-                  <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Location</p>
-                  <p className="text-lg font-light tracking-wide">{project.location}</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Category</p>
-                  <p className="text-lg font-light tracking-wide">{project.category}</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Year</p>
-                  <p className="text-lg font-light tracking-wide">{project.year}</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Description</p>
-                  <p className="text-base font-light leading-relaxed text-muted-foreground max-w-xl">
-                    {project.description}
-                  </p>
+                <div className="space-y-8">
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Location</p>
+                    <p className="text-lg font-light tracking-wide">{project.location}</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Category</p>
+                    <p className="text-lg font-light tracking-wide">{project.category}</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Year</p>
+                    <p className="text-lg font-light tracking-wide">{project.year}</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Description</p>
+                    <p className="text-base font-light leading-relaxed text-muted-foreground/90 text-pretty">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 

@@ -58,7 +58,7 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className={`group relative p-10 md:p-14 border border-background/10 hover:border-primary hover:bg-background/5 transition-colors duration-500 cursor-pointer ${isVisible ? "animate-fade-up" : "opacity-0"
+                className={`group relative p-10 md:p-14 border border-background/20 hover:bg-background/5 transition-colors duration-500 cursor-pointer ${isVisible ? "animate-fade-up" : "opacity-0"
                   }`}
                 style={{ animationDelay: `${0.2 + i * 0.1}s` }}
               >
