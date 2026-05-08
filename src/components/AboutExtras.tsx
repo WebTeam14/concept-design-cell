@@ -153,18 +153,51 @@ function Timeline() {
 // ─── 3. Philosophy ───────────────────────────────────────────────────────────
 function Philosophy() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-foreground text-background">
       <div className="container mx-auto px-4">
         <motion.p
           {...fadeUp()}
           className="text-sm font-medium tracking-widest uppercase text-primary mb-3 text-center"
         >
-          How We Think
+          How We Work
         </motion.p>
 
+        <motion.h2
+          {...fadeUp(0.1)}
+          className="font-display text-3xl md:text-4xl font-bold text-center mb-16"
+        >
+          What We Stand For
+        </motion.h2>
 
-
-
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Quality",
+              text: "Uncompromising standards in every detail, from initial sketch to final construction.",
+            },
+            {
+              title: "Innovation",
+              text: "Pushing boundaries through creative problem-solving and modern architectural techniques.",
+            },
+            {
+              title: "Integrity",
+              text: "Building lasting relationships through transparency, honesty, and professional excellence.",
+            },
+          ].map((item, i) => (
+            <motion.div
+              key={item.title}
+              {...fadeUp(0.15 + i * 0.1)}
+              className="border border-background/10 p-8 hover:border-primary transition-colors duration-500 group"
+            >
+              <h3 className="text-primary text-xs font-bold tracking-[0.4em] uppercase mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                {item.title}
+              </h3>
+              <p className="text-background/60 leading-relaxed text-sm group-hover:text-background/90 transition-colors">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -176,6 +209,7 @@ export default function AboutExtras() {
     <>
       <VisionMission />
       <Timeline />
+      <Philosophy />
     </>
   );
 }

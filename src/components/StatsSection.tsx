@@ -55,14 +55,11 @@ export default function StatsSection() {
           <div className="w-8 h-[1px] bg-primary/30"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center border-t border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {stats.map((stat, i) => (
             <div 
               key={stat.label} 
-              className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 border-white/10 
-                ${i % 2 === 0 ? 'sm:border-r' : 'sm:border-r-0 md:border-r'} 
-                ${i === stats.length - 1 ? 'md:border-r-0' : ''}
-                border-b sm:border-b-0 last:border-b-0`}
+              className="border border-white/10 bg-white/5"
             >
               <AnimatedNumber 
                 target={stat.target} 

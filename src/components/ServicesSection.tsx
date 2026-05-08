@@ -24,9 +24,9 @@ export default function ServicesSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="services" className="relative py-28 md:py-40 bg-[#f9f9f9] dark:bg-muted/10 overflow-hidden">
+    <section id="services" className="relative py-28 md:py-40 bg-foreground text-background overflow-hidden">
       {/* Decorative Background Number */}
-      <div className="absolute top-10 left-10 text-[20rem] font-display font-bold text-muted/20 leading-none select-none -z-10">
+      <div className="absolute top-10 left-10 text-[20rem] font-display font-bold text-background/5 leading-none select-none -z-10">
         02
       </div>
 
@@ -40,35 +40,35 @@ export default function ServicesSection() {
               </p>
             </div>
             <h2
-              className={`font-display text-4xl md:text-5xl font-light text-foreground text-balance leading-tight ${isVisible ? "animate-fade-up" : "opacity-0"
+              className={`font-display text-4xl md:text-5xl font-light text-background text-balance leading-tight ${isVisible ? "animate-fade-up" : "opacity-0"
                 }`}
               style={{ animationDelay: "0.1s" }}
             >
               Elevating spaces through bold <span className="font-semibold italic">vision</span> and flawless execution.
             </h2>
           </div>
-          <p className={`text-muted-foreground/80 font-light max-w-sm text-sm md:text-base leading-relaxed ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
+          <p className={`text-background/70 font-light max-w-sm text-sm md:text-base leading-relaxed ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
             Our firm provides end-to-end professional services covering all stages of architectural and project development. With a multidisciplinary approach, we integrate design innovation, technical expertise, and regulatory compliance to deliver projects that are functional, sustainable, and aesthetically refined.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.title}
-                className={`group relative p-10 md:p-14 border-t border-r border-border/20 last:border-r-0 hover:bg-background transition-colors duration-500 cursor-pointer ${isVisible ? "animate-fade-up" : "opacity-0"
+                className={`group relative p-10 md:p-14 border border-background/10 hover:border-primary hover:bg-background/5 transition-colors duration-500 cursor-pointer ${isVisible ? "animate-fade-up" : "opacity-0"
                   }`}
                 style={{ animationDelay: `${0.2 + i * 0.1}s` }}
               >
                 <div className="mb-8 text-primary">
                   <Icon size={40} strokeWidth={1} className="transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <h3 className="font-display text-2xl font-normal text-foreground mb-4">
+                <h3 className="font-display text-2xl font-normal text-background mb-4">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground/80 font-light text-sm leading-relaxed mb-8">
+                <p className="text-background/60 font-light text-sm leading-relaxed mb-8">
                   {service.desc}
                 </p>
 
@@ -82,7 +82,7 @@ export default function ServicesSection() {
 
         {/* Closing Paragraph */}
         <div className={`mt-20 text-center max-w-4xl mx-auto ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.6s" }}>
-          <p className="text-muted-foreground/90 font-light text-lg md:text-xl leading-relaxed italic">
+          <p className="text-background/70 font-light text-lg md:text-xl leading-relaxed italic">
             "With extensive experience in diverse project typologies, we ensure every design aligns with technical standards, client vision, and urban regulations, resulting in well-executed and enduring built environments."
           </p>
           <div className="w-16 h-px bg-primary/30 mx-auto mt-8"></div>
