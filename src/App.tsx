@@ -11,6 +11,7 @@ import Services from "./pages/Services.tsx";
 import Contact from "./pages/Contact.tsx";
 import CompletedProjects from "./pages/CompletedProjects.tsx";
 import OngoingProjects from "./pages/OngoingProjects.tsx";
+import LiasioningProjects from "./pages/LiasioningProjects.tsx";
 import ProjectDetail from "./pages/ProjectDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Preloader from "./components/Preloader";
@@ -48,6 +49,7 @@ const MainContent = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects/completed" element={<CompletedProjects />} />
           <Route path="/projects/ongoing" element={<OngoingProjects />} />
+          <Route path="/projects/liasioning" element={<LiasioningProjects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

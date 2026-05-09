@@ -63,3 +63,4 @@ export const allProjects: Project[] = projectsData.map((p: any) => ({
 
 export const completedProjects = allProjects.filter(p => p.status === "completed");
 export const ongoingProjects = allProjects.filter(p => p.status === "ongoing");
+export const liasioningProjects = allProjects.filter(p => p.status === "liasioning");

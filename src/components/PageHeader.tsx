@@ -17,18 +17,20 @@ export default function PageHeader({
 }: PageHeaderProps) {
   return (
     <div className="relative overflow-hidden bg-foreground pt-64 pb-16 md:pt-80 md:pb-24">
-      {/* Background Animated SVG Text (Prague Style) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-30">
-        <svg width="100%" height="100%" viewBox="0 0 1000 300" preserveAspectRatio="xMinYMid meet">
-          <motion.text
-            x="20"
-            y="55%"
-            textAnchor="start"
-            className="text-[100px] md:text-[150px] font-bold tracking-tight uppercase font-display"
+      {/* Background Animated SVG Text */}
+      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden opacity-30 pt-20 md:pt-28">
+        <div className="container mx-auto px-4 h-full">
+          <svg width="100%" height="100%" viewBox="0 0 2000 400" preserveAspectRatio="xMinYMin meet">
+            <motion.text
+              x="0"
+              y="30%"
+              textAnchor="start"
+              alignmentBaseline="middle"
+              className="text-[70px] sm:text-[90px] md:text-[120px] lg:text-[150px] xl:text-[170px] font-bold tracking-tight uppercase font-display"
             style={{
               fill: "transparent",
-              stroke: "rgba(255,255,255,0.5)",
-              strokeWidth: "2.5px",
+              stroke: "rgba(255,255,255,0.4)",
+              strokeWidth: "2px",
               strokeDasharray: "2500px",
             }}
             initial={{ strokeDashoffset: "2500px", opacity: 0 }}
@@ -42,6 +44,7 @@ export default function PageHeader({
             {title}
           </motion.text>
         </svg>
+        </div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4">

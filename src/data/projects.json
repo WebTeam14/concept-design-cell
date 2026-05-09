@@ -247,5 +247,55 @@
     "description": "A residential project in Taloja offering spacious apartments with thoughtful design and modern amenities.",
     "status": "ongoing",
     "imageFolder": "Ongoingprojects/TALOJA"
+  },
+  {
+    "id": "arihant-advika",
+    "title": "ARIHANT ADVIKA",
+    "category": "Liasioning",
+    "location": "Maharashtra, India",
+    "year": "2025",
+    "description": "Liasioning project for Arihant Advika.",
+    "status": "liasioning",
+    "imageFolder": "LIASIONING/ARIHANT ADVIKA"
+  },
+  {
+    "id": "arihant-aloki",
+    "title": "ARIHANT ALOKI",
+    "category": "Liasioning",
+    "location": "Maharashtra, India",
+    "year": "2025",
+    "description": "Liasioning project for Arihant Aloki.",
+    "status": "liasioning",
+    "imageFolder": "LIASIONING/ARIHANT ALOKI"
+  },
+  {
+    "id": "arihant-amisha",
+    "title": "ARIHANT AMISHA",
+    "category": "Liasioning",
+    "location": "Maharashtra, India",
+    "year": "2025",
+    "description": "Liasioning project for Arihant Amisha.",
+    "status": "liasioning",
+    "imageFolder": "LIASIONING/ARIHANT AMISHA"
+  },
+  {
+    "id": "arihant-aspire",
+    "title": "ARIHANT ASPIRE",
+    "category": "Liasioning",
+    "location": "Maharashtra, India",
+    "year": "2025",
+    "description": "Liasioning project for Arihant Aspire.",
+    "status": "liasioning",
+    "imageFolder": "LIASIONING/ARIHANT ASPIRE"
+  },
+  {
+    "id": "sara-realty",
+    "title": "SARA REALTY",
+    "category": "Liasioning",
+    "location": "Maharashtra, India",
+    "year": "2025",
+    "description": "Liasioning project for Sara Realty.",
+    "status": "liasioning",
+    "imageFolder": "LIASIONING/SARA REALTY"
   }
 ]

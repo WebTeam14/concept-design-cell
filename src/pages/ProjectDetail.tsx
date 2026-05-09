@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { completedProjects, ongoingProjects, Project } from "@/data/projects";
+import { completedProjects, ongoingProjects, liasioningProjects, Project } from "@/data/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageWrapper from "@/components/PageWrapper";
@@ -14,7 +14,7 @@ export default function ProjectDetail() {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   useEffect(() => {
-    const all = [...completedProjects, ...ongoingProjects];
+    const all = [...completedProjects, ...ongoingProjects, ...liasioningProjects];
     setAllProjects(all);
     const found = all.find((p) => p.id === id);
     if (found) {
@@ -66,6 +66,13 @@ export default function ProjectDetail() {
             <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
               <div className="space-y-12">
                 <div>
+                  <Link
+                    to={`/projects/${project.status}`}
+                    className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors mb-8 group"
+                  >
+                    <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+                    Back to {project.status}
+                  </Link>
                   <h1 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-tight mb-4">
                     {project.title}
                   </h1>
@@ -117,7 +124,7 @@ export default function ProjectDetail() {
             ) : <div />}
 
             <Link 
-              to="/projects/completed"
+              to={`/projects/${project.status}`}
               className="flex items-center gap-2 p-4 rounded-full border border-border/20 hover:bg-primary hover:text-white transition-all duration-300 group"
             >
               <Grid size={20} className="group-hover:rotate-90 transition-transform duration-500" />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { completedProjects, ongoingProjects } from "@/data/projects";
+import { completedProjects, ongoingProjects, liasioningProjects } from "@/data/projects";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 
@@ -62,6 +62,14 @@ export default function ProjectsSection() {
               className="inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase text-foreground hover:text-primary transition-colors group"
             >
               Ongoing Projects
+              <ArrowRight size={20} strokeWidth={1} className="group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
+            <span className="hidden sm:block w-px h-5 bg-border" />
+            <Link
+              to="/projects/liasioning"
+              className="inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase text-foreground hover:text-primary transition-colors group"
+            >
+              Liasioning
               <ArrowRight size={20} strokeWidth={1} className="group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
           </div>
