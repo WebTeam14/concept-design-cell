@@ -128,7 +128,7 @@ export default function Navbar() {
               src={logo}
               alt="Concept Design Cell"
               className={`
-                h-12 md:h-14 lg:h-16 xl:h-[72px] w-auto object-contain
+                h-16 md:h-[72px] lg:h-[80px] xl:h-[84px] w-auto object-contain
                 transition-all duration-500
                 ${scrolled ? "brightness-110" : ""}
               `}
@@ -262,7 +262,7 @@ export default function Navbar() {
                 <img
                   src={logo}
                   alt="Concept Design Cell"
-                  className="h-12 md:h-14 w-auto object-contain"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
                 />
               </Link>
               <button
