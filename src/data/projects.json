@@ -7,7 +7,10 @@
     "year": "2009",
     "description": "A residential project in Goa blending coastal aesthetics with modern living.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "28-11-2009-Goa tennant.jpg"
+    ]
   },
   {
     "id": "74-elevation",
@@ -17,7 +20,10 @@
     "year": "2022",
     "description": "A striking residential elevation featuring contemporary facade design.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "74 elevation-final.jpg"
+    ]
   },
   {
     "id": "concept-design",
@@ -27,7 +33,10 @@
     "year": "2023",
     "description": "A concept-driven design showcasing bold architectural ideas and spatial innovation.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "Concept Design - 12 x 15.jpg"
+    ]
   },
   {
     "id": "don-bosco-school",
@@ -37,7 +46,10 @@
     "year": "2020",
     "description": "An institutional building designed to provide a vibrant learning environment for students.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "DON BOSCO SCHOOL ,NERUL.jpg"
+    ]
   },
   {
     "id": "g-14",
@@ -47,7 +59,10 @@
     "year": "2023",
     "description": "A premium residential complex with modern amenities and elegant facade design.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "G-14 copy.jpg"
+    ]
   },
   {
     "id": "law-pharmacy-college",
@@ -57,7 +72,10 @@
     "year": "2021",
     "description": "A purpose-built educational campus for law and pharmacy studies with state-of-the-art facilities.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "LAW & PHARMACY COLLEGE TALOJA.jpeg"
+    ]
   },
   {
     "id": "mcon-apartments",
@@ -67,7 +85,10 @@
     "year": "2023",
     "description": "A modern apartment complex offering spacious living with contemporary architectural language.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "M.CON.APARTMENTS.jpg"
+    ]
   },
   {
     "id": "plot-79",
@@ -77,7 +98,10 @@
     "year": "2024",
     "description": "A residential project featuring a distinctive front elevation with clean lines and modern finishes.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "PLOT NO 79 - FRONT VIEW - 15.05.24.jpg"
+    ]
   },
   {
     "id": "riddhi-siddhi-complex",
@@ -87,7 +111,10 @@
     "year": "2022",
     "description": "A commercial complex designed for retail and office use with a prominent street presence.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "RIDDHI  SIDDHI  COMPLEX.jpg"
+    ]
   },
   {
     "id": "shivjay-complex",
@@ -97,7 +124,10 @@
     "year": "2021",
     "description": "A mixed-use commercial building with an architecturally bold facade and functional interiors.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "SHIVJAY COMPLEX.jpg"
+    ]
   },
   {
     "id": "siddhivinayak",
@@ -107,7 +137,11 @@
     "year": "2023",
     "description": "A landmark residential project with a grand elevation and premium living spaces.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "SIDDHIVINAYAK-FINAL.jpg",
+      "SIDDHIVINAYAK 208-FINAL.jpg"
+    ]
   },
   {
     "id": "sm-height",
@@ -117,7 +151,10 @@
     "year": "2022",
     "description": "A residential tower project designed with attention to vertical aesthetics and space efficiency.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "SM_HEIGHT_.jpg"
+    ]
   },
   {
     "id": "sun-333",
@@ -127,7 +164,10 @@
     "year": "2021",
     "description": "A residential project that brings warmth and light into every living space through thoughtful design.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "SUN_333.JPG"
+    ]
   },
   {
     "id": "sun-pushpam",
@@ -137,7 +177,10 @@
     "year": "2023",
     "description": "A premium residential development with lush landscaping and a modern architectural language.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "SUN_PUSHPAM.jpg"
+    ]
   },
   {
     "id": "plot-101",
@@ -147,7 +190,10 @@
     "year": "2022",
     "description": "A residential design showcasing efficient space utilization and a contemporary exterior finish.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "plot 101.jpg"
+    ]
   },
   {
     "id": "siddhi-height",
@@ -157,7 +203,10 @@
     "year": "2021",
     "description": "A high-rise residential building with a clean, modern silhouette and quality living spaces.",
     "status": "completed",
-    "imageFolder": "Completedproject"
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "siddhi height.jpg"
+    ]
   },
   {
     "id": "jewel-of-panvel",

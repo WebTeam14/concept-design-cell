@@ -17,7 +17,6 @@ const navLinks = [
       { label: "Ongoing Projects", href: "/projects/ongoing" },
     ],
   },
-
   { label: "Contact", href: "/contact" },
 ];
 
@@ -53,8 +52,14 @@ export default function Navbar() {
     }
   };
 
-  // TRUE when sitting over a dark hero (transparent navbar, white text)
   const onDarkHero = !scrolled && isHome && !isOpen;
+
+  // Link text color: white on hero, yellow when scrolled
+  const linkColor = scrolled
+    ? "text-[#D4A017] hover:text-yellow-300"
+    : "text-white/90 hover:text-white";
+
+  const linkAfterBg = scrolled ? "after:bg-[#D4A017]" : "after:bg-white";
 
   return (
     <>
@@ -66,7 +71,7 @@ export default function Navbar() {
           fixed top-0 left-0 right-0 z-50
           transition-all duration-500
           ${scrolled
-            ? "bg-black/75 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.35)]"
+            ? "bg-[#0a0a0a] shadow-[0_2px_30px_rgba(0,0,0,0.6)]"
             : "bg-black/40 backdrop-blur-sm"
           }
         `}
@@ -81,23 +86,22 @@ export default function Navbar() {
               transition={{ duration: 0.2 }}
               className={`
                 absolute inset-0 z-20 flex items-center px-6 md:px-12
-                ${scrolled ? "bg-white" : "bg-black/55 backdrop-blur-sm"}
+                ${scrolled ? "bg-[#0a0a0a]" : "bg-black/55 backdrop-blur-sm"}
               `}
             >
-              <Search size={17} className={scrolled ? "text-neutral-400" : "text-white/55"} />
+              <Search size={17} className="text-[#D4A017]" />
               <input
                 ref={searchRef}
                 type="text"
                 placeholder="Type to search…"
                 className={`
                   flex-1 px-4 bg-transparent outline-none text-[13px] tracking-wider font-medium
-                  ${scrolled ? "text-black placeholder-neutral-400" : "text-white placeholder-white/45"}
+                  ${scrolled ? "text-white placeholder-white/30" : "text-white placeholder-white/45"}
                 `}
               />
               <button
                 onClick={() => setSearchOpen(false)}
-                className={`p-2 transition-colors ${scrolled ? "text-neutral-500 hover:text-black" : "text-white/65 hover:text-white"
-                  }`}
+                className="p-2 text-white/60 hover:text-white transition-colors"
               >
                 <X size={19} />
               </button>
@@ -106,39 +110,42 @@ export default function Navbar() {
         </AnimatePresence>
 
         {/* ── Main bar ────────────────────────────────────────────────────── */}
-        <div className="flex items-center justify-between h-[80px] md:h-[90px] lg:h-[90px] px-5 md:px-8 lg:px-14 xl:px-20">
+        {/* 
+          Layout strategy: logo left-of-center, links right-of-center.
+          Using a max-w container with padding so logo sits ~20% from left
+          and nav links cluster more centrally rather than hugging the edges.
+        */}
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between h-[72px] md:h-[84px] lg:h-[90px] px-6 md:px-10 lg:px-16">
 
-          {/* LOGO — far left */}
+          {/* LOGO */}
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center shrink-0 group py-2"
+            className="flex items-center shrink-0 group py-1"
           >
             <img
               src={logo}
               alt="Concept Design Cell"
               className={`
-                h-14 md:h-16 lg:h-20 w-auto object-contain
+                h-12 md:h-14 lg:h-16 xl:h-[72px] w-auto object-contain
                 transition-all duration-500
+                ${scrolled ? "brightness-110" : ""}
               `}
             />
           </Link>
 
-          {/* DESKTOP LINKS — far right, pipe-separated */}
-          <div className="hidden lg:flex items-center">
+          {/* DESKTOP LINKS */}
+          <div className="hidden lg:flex items-center gap-0">
             {navLinks.map((link, i) => (
               <div key={link.href} className="flex items-center">
                 {/* Pipe separator */}
                 {i > 0 && (
-                  <span
-                    className="mx-4 xl:mx-5 select-none font-thin text-base leading-none text-white/30"
-                  >
+                  <span className={`mx-4 xl:mx-5 select-none font-thin text-sm leading-none ${scrolled ? "text-[#D4A017]/40" : "text-white/25"}`}>
                     |
                   </span>
                 )}
 
                 {link.dropdown ? (
-                  /* Dropdown trigger */
                   <div
                     className="relative"
                     onMouseEnter={() => setOpenDropdown(link.label)}
@@ -146,17 +153,16 @@ export default function Navbar() {
                   >
                     <button
                       className={`
-                      flex items-center gap-1.5
-                      text-[13px] md:text-[14px] font-bold tracking-[0.2em] uppercase
-                      transition-colors duration-200
-                      text-white/85 hover:text-white
-                    `}
+                        flex items-center gap-1.5
+                        text-[12px] xl:text-[13px] font-bold tracking-[0.18em] uppercase
+                        transition-colors duration-200
+                        ${linkColor}
+                      `}
                     >
                       {link.label}
                       <ChevronDown
                         size={10}
-                        className={`transition-transform duration-300 ${openDropdown === link.label ? "rotate-180" : ""
-                          }`}
+                        className={`transition-transform duration-300 ${openDropdown === link.label ? "rotate-180" : ""}`}
                       />
                     </button>
 
@@ -164,18 +170,18 @@ export default function Navbar() {
                     <AnimatePresence>
                       {openDropdown === link.label && (
                         <motion.div
-                          initial={{ opacity: 0, y: 5 }}
+                          initial={{ opacity: 0, y: 6 }}
                           animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 5 }}
+                          exit={{ opacity: 0, y: 6 }}
                           transition={{ duration: 0.16 }}
-                          className="absolute top-full right-0 mt-4 w-52 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.13)] border-t-[2px] border-neutral-800"
+                          className="absolute top-full right-0 mt-4 w-56 bg-[#0a0a0a] shadow-[0_8px_30px_rgba(0,0,0,0.4)] border-t-[2px] border-[#D4A017]"
                         >
                           {link.dropdown.map((sub) => (
                             <Link
                               key={sub.href}
                               to={sub.href}
                               onClick={() => handleNavClick(sub.href)}
-                              className="block px-5 py-3 text-[9.5px] font-bold tracking-[0.18em] uppercase text-neutral-600 hover:text-black hover:bg-neutral-50 transition-all border-b border-neutral-100 last:border-0"
+                              className="block px-5 py-3.5 text-[10px] font-bold tracking-[0.18em] uppercase text-white/50 hover:text-[#D4A017] hover:bg-white/5 transition-all border-b border-white/[0.06] last:border-0"
                             >
                               {sub.label}
                             </Link>
@@ -185,18 +191,17 @@ export default function Navbar() {
                     </AnimatePresence>
                   </div>
                 ) : (
-                  /* Regular link */
                   <Link
                     to={link.href}
                     onClick={() => handleNavClick(link.href)}
-                    className="
-                      relative text-[13px] md:text-[14px] font-bold tracking-[0.2em] uppercase
+                    className={`
+                      relative text-[12px] xl:text-[13px] font-bold tracking-[0.18em] uppercase
                       transition-colors duration-200
                       after:absolute after:-bottom-0.5 after:left-0
                       after:w-0 after:h-px after:transition-all after:duration-300
                       hover:after:w-full
-                      text-white/85 hover:text-white after:bg-white
-                    "
+                      ${linkColor} ${linkAfterBg}
+                    `}
                   >
                     {link.label}
                   </Link>
@@ -204,42 +209,42 @@ export default function Navbar() {
               </div>
             ))}
 
-            {/* Pipe + Search icon */}
-            <span className="mx-4 xl:mx-5 select-none font-thin text-base leading-none text-white/30">|</span>
+            {/* Search */}
+            <span className={`mx-4 xl:mx-5 select-none font-thin text-sm leading-none ${scrolled ? "text-[#D4A017]/40" : "text-white/25"}`}>|</span>
             <button
               onClick={() => setSearchOpen(true)}
-              className="transition-colors duration-200 text-white/75 hover:text-white"
+              className={`transition-colors duration-200 ${scrolled ? "text-[#D4A017]/70 hover:text-[#D4A017]" : "text-white/70 hover:text-white"}`}
             >
-              <Search size={18} strokeWidth={2.2} />
+              <Search size={17} strokeWidth={2.2} />
             </button>
           </div>
 
           {/* MOBILE: search + hamburger */}
-          <div className="flex lg:hidden items-center gap-0.5">
+          <div className="flex lg:hidden items-center gap-1">
             <button
               onClick={() => setSearchOpen(true)}
-              className={`p-2.5 transition-colors ${onDarkHero || isOpen ? "text-white/80 hover:text-white" : "text-neutral-700 hover:text-black"
-                }`}
+              className={`p-2.5 transition-colors ${onDarkHero || isOpen ? "text-white/80 hover:text-white" : "text-white/80 hover:text-white"}`}
             >
-              <Search size={19} strokeWidth={2} />
+              <Search size={20} strokeWidth={2} />
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2.5 transition-colors ${onDarkHero || isOpen ? "text-white hover:text-white/70" : "text-neutral-800 hover:text-black"
-                }`}
+              className={`p-2.5 transition-colors ${onDarkHero || isOpen ? "text-white hover:text-white/70" : "text-white hover:text-white/70"}`}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X size={22} strokeWidth={2} /> : <Menu size={22} strokeWidth={2} />}
+              {isOpen ? <X size={24} strokeWidth={2} /> : <Menu size={24} strokeWidth={2} />}
             </button>
           </div>
         </div>
 
-        {/* Scrolled bottom border */}
-        {scrolled && <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />}
+        {/* Scrolled bottom accent line */}
+        {scrolled && (
+          <div className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#D4A017]/50 to-transparent" />
+        )}
       </nav>
 
       {/* ═══════════════════════════════════════════════════════════════════
-          MOBILE FULL-SCREEN MENU (dark overlay, like ethique.in)
+          MOBILE FULL-SCREEN MENU
       ═══════════════════════════════════════════════════════════════════ */}
       <AnimatePresence>
         {isOpen && (
@@ -248,35 +253,37 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 z-40 bg-[#1c1a18] flex flex-col"
+            className="lg:hidden fixed inset-0 z-40 bg-[#0a0a0a] flex flex-col"
           >
-            {/* Mobile Header with Logo and Close Button */}
-            <div className="flex items-center justify-between h-[80px] md:h-[90px] px-5 md:px-8">
+            {/* Mobile Header */}
+            <div className="flex items-center justify-between h-[72px] md:h-[84px] px-5 md:px-8 border-b border-white/[0.08]">
               <Link to="/" onClick={() => setIsOpen(false)} className="py-2">
                 <img
                   src={logo}
                   alt="Concept Design Cell"
-                  className="h-14 md:h-16 w-auto object-contain"
+                  className="h-12 md:h-14 w-auto object-contain"
                 />
               </Link>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2.5 text-white hover:text-white/70 transition-colors"
+                className="p-2.5 text-white hover:text-[#D4A017] transition-colors"
+                aria-label="Close menu"
               >
-                <X size={22} strokeWidth={2} />
+                <X size={24} strokeWidth={2} />
               </button>
             </div>
 
-            <div className="h-px w-full bg-white/10" />
+            {/* Gold accent line */}
+            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#D4A017]/60 to-transparent" />
 
-            <ul className="flex flex-col px-7 pt-4 pb-10 overflow-y-auto flex-1">
+            <ul className="flex flex-col px-7 pt-2 pb-10 overflow-y-auto flex-1">
               {navLinks.map((link, i) => (
                 <motion.li
                   key={link.href}
                   initial={{ opacity: 0, x: -18 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.03 + i * 0.055, duration: 0.28 }}
-                  className="border-b border-white/[0.07]"
+                  className="border-b border-white/[0.06]"
                 >
                   {link.dropdown ? (
                     <>
@@ -284,13 +291,12 @@ export default function Navbar() {
                         onClick={() =>
                           setOpenDropdown(openDropdown === link.label ? null : link.label)
                         }
-                        className="flex items-center justify-between w-full py-6 text-[15px] font-bold tracking-[0.2em] uppercase text-white/60 hover:text-white transition-colors"
+                        className="flex items-center justify-between w-full py-5 text-[13px] font-bold tracking-[0.2em] uppercase text-white/60 hover:text-[#D4A017] transition-colors"
                       >
                         {link.label}
                         <ChevronDown
                           size={12}
-                          className={`transition-transform duration-300 ${openDropdown === link.label ? "rotate-180" : ""
-                            }`}
+                          className={`transition-transform duration-300 ${openDropdown === link.label ? "rotate-180 text-[#D4A017]" : ""}`}
                         />
                       </button>
                       <AnimatePresence>
@@ -307,9 +313,9 @@ export default function Navbar() {
                                 key={sub.href}
                                 to={sub.href}
                                 onClick={() => handleNavClick(sub.href)}
-                                className="flex items-center gap-3 py-3 pl-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 hover:text-white/65 transition-colors"
+                                className="flex items-center gap-3 py-3 pl-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 hover:text-[#D4A017] transition-colors"
                               >
-                                <span className="w-3 h-px bg-white/20 inline-block shrink-0" />
+                                <span className="w-3 h-px bg-[#D4A017]/30 inline-block shrink-0" />
                                 {sub.label}
                               </Link>
                             ))}
@@ -322,7 +328,7 @@ export default function Navbar() {
                     <Link
                       to={link.href}
                       onClick={() => handleNavClick(link.href)}
-                      className="block py-6 text-[15px] font-bold tracking-[0.2em] uppercase text-white/60 hover:text-white transition-colors"
+                      className="block py-5 text-[13px] font-bold tracking-[0.2em] uppercase text-white/60 hover:text-[#D4A017] transition-colors"
                     >
                       {link.label}
                     </Link>
