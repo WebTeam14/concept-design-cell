@@ -16,8 +16,7 @@ const navLinks = [
       { label: "Liasioning Projects", href: "/projects/liasioning" },
       { label: "Ongoing Projects", href: "/projects/ongoing" },
       { label: "Completed Projects", href: "/projects/completed" },
-      
-      
+      { label: "Upcoming Projects", href: "/projects/upcoming" },
     ],
   },
   { label: "Contact", href: "/contact" },

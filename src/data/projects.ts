@@ -21,6 +21,8 @@ const allImages = import.meta.glob("/src/assets/**/*.{jpg,jpeg,png,JPG,JPEG,PNG}
   import: "default",
 }) as Record<string, string>;
 
+import sketch2 from "@/assets/hero-sketch-2.png";
+
 // Helper to convert the automated image pool into a list for each project
 const getProjectImages = (folderName: string, projectId: string, imageFiles?: string[]) => {
   const images: string[] = [];
@@ -52,19 +54,23 @@ const getProjectImages = (folderName: string, projectId: string, imageFiles?: st
 };
 
 // ─── Dynamic Project Generation ───────────────────────────────────────────────
-export const allProjects: Project[] = projectsData.map((p: any) => ({
-  id: p.id,
-  title: p.title,
-  category: p.category,
-  location: p.location,
-  year: p.year,
-  description: p.description,
-  status: p.status,
-  plotArea: p["plot area"],
-  client: p.client,
-  images: getProjectImages(p.imageFolder, p.id, p.imageFiles)
-}));
+export const allProjects: Project[] = projectsData.map((p: any) => {
+  const imgs = getProjectImages(p.imageFolder, p.id, p.imageFiles);
+  return {
+    id: p.id,
+    title: p.title,
+    category: p.category,
+    location: p.location,
+    year: p.year,
+    description: p.description,
+    status: p.status,
+    plotArea: p["plot area"],
+    client: p.client,
+    images: imgs.length > 0 ? imgs : [sketch2]
+  };
+});
 
 export const completedProjects = allProjects.filter(p => p.status === "completed");
 export const ongoingProjects = allProjects.filter(p => p.status === "ongoing");
 export const liasioningProjects = allProjects.filter(p => p.status === "liasioning");
+export const upcomingProjects = allProjects.filter(p => p.status === "upcoming");

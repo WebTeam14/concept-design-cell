@@ -316,5 +316,55 @@
     "imageFiles": [
       "Mitkars N M Heights.jpg"
     ]
+  },
+  {
+    "id": "aanandwadi-liaisoning",
+    "title": "Aanandwadi",
+    "category": "Proposed Residential Development",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Liasioning for proposed residential development.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming"
+  },
+  {
+    "id": "waverle-liaisoning",
+    "title": "Waverle",
+    "category": "Proposed Residential Development",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Liasioning for proposed residential development.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming"
+  },
+  {
+    "id": "godrej-ashiana-liaisoning",
+    "title": "Godrej (Ashiana Housing Ltd)",
+    "category": "Proposed Residential Development",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Liasioning for proposed residential development.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming"
+  },
+  {
+    "id": "godrej-studio",
+    "title": "Godrej Studio",
+    "category": "Proposed Development",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Liasioning for proposed development at Godrej Studio.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming"
+  },
+  {
+    "id": "lt-layout-approval",
+    "title": "L & T Layout Approval",
+    "category": "Layout Approval",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Layout approval and development clearance.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming"
   }
 ]

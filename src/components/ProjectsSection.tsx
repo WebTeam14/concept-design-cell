@@ -72,6 +72,14 @@ export default function ProjectsSection() {
               Liasioning
               <ArrowRight size={20} strokeWidth={1} className="group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
+            <span className="hidden sm:block w-px h-5 bg-border" />
+            <Link
+              to="/projects/upcoming"
+              className="inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase text-foreground hover:text-primary transition-colors group"
+            >
+              Upcoming
+              <ArrowRight size={20} strokeWidth={1} className="group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
 
