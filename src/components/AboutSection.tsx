@@ -1,4 +1,4 @@
-import aboutTeam from "@/assets/about-team.jpg";
+import aboutTeam from "@/assets/about1.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useParallax } from "@/hooks/useParallax";
 

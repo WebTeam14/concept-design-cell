@@ -96,8 +96,9 @@ export default function Footer() {
                 </div>
                 <address className="not-italic text-sm font-light text-white/60 leading-relaxed">
                   CONCEPT DESIGN CELL <br />
-                  1208, BWing , Shelton Saphhire , <br />
-                  Plot No.18 & 19, Sector -15 , CBD  Belapur , Navi Mumbai-400614 <br />
+                  Main Office: G-19 ,1ST Floor , Neighbourhood Shopping Complex ,<br /> Sector -04 , Nerul , Navi Mumbai -400706<br />
+                  Branch Office: 1208, BWing , Shelton Saphhire , Plot No.18 & 19, Sector -15 , CBD Belapur , Navi Mumbai-400614
+
 
                 </address>
               </li>

@@ -22,7 +22,7 @@ export const teamMembers: Member[] = [
     id: "2",
     name: "Arch. Minakshi  Patil.",
     role: "Associate Architect",
-    bio: "Working since 2006, the Architect possesses extensive experience in the planning, design, and execution of diverse architectural projects. With a vast knowledge of construction processes and site coordination, she ensures the seamless integration of design intent with on-site implementation. Her multidisciplinary exposure across residential, commercial, industrial, and institutional sectors enables her to deliver practical, efficient, and aesthetically balanced architectural solutions.<br /> Her strong understanding of building materials, services integration, and local development regulations supports effective project delivery from concept to completion. With a keen eye for detail and commitment to design excellence, she consistently aims to create spaces that are functional, sustainable, and contextually responsive.",
+    bio: "Associate Architect",
     image: team2,
   },
 

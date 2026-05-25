@@ -9,6 +9,8 @@ export interface Project {
   images: string[];
   description: string;
   status?: string;
+  plotArea?: string;
+  client?: string;
 }
 
 // ─── Automated Image Discovery ────────────────────────────────────────────────
@@ -58,6 +60,8 @@ export const allProjects: Project[] = projectsData.map((p: any) => ({
   year: p.year,
   description: p.description,
   status: p.status,
+  plotArea: p["plot area"],
+  client: p.client,
   images: getProjectImages(p.imageFolder, p.id, p.imageFiles)
 }));
 

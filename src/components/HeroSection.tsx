@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import home from "@/assets/1.jpg";
-import heroBg2 from "@/assets/Slider2.jpeg";
 import heroBg3 from "@/assets/project-1.jpg";
 
 // Add this to your index.html <head>:
@@ -17,15 +16,6 @@ const slides = [
     subtitle: "Designing spaces that inspire, endure, and elevate lifestyles.",
     link: "#contact",
     cta: "Get in Touch",
-    isPhoto: false,
-  },
-  {
-    id: 2,
-    image: heroBg2,
-    title: "Crafting Visionary Modern Residences",
-    subtitle: "Where elegance meets sustainable and intelligent design.",
-    link: "#projects",
-    cta: "View Projects",
     isPhoto: false,
   },
   {

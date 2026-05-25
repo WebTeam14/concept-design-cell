@@ -21,21 +21,21 @@ export default function OngoingProjects() {
 
         {/* Grid */}
         <div ref={ref} className="container mx-auto px-4 py-20 md:py-28">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="columns-1 md:columns-3 lg:columns-4 gap-4 [column-fill:_balance] box-border">
             {ongoingProjects.map((project, i) => (
               <div
                 key={project.id}
-                className={`group cursor-pointer relative aspect-square border border-border/40 p-3 hover:border-primary transition-colors duration-500 ${
+                className={`break-inside-avoid mb-4 group cursor-pointer relative border border-border/40 hover:border-primary transition-colors duration-500 overflow-hidden rounded-xl ${
                   isVisible ? "animate-fade-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
                 onClick={() => navigate(`/projects/${project.id}`)}
               >
-                <div className="w-full h-full overflow-hidden relative">
+                <div className="w-full relative">
                   <img
                     src={project.images[0]}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   
                   {/* Status Badge */}

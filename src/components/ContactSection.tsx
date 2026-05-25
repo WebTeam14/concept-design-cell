@@ -78,10 +78,11 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-semibold text-sm mb-1">Office</h4>
                 <p className="text-section-dark-foreground/60 text-sm">
-                  CONCEPT DESIGN CELL <br />
-                  1208, BWing , Shelton Saphhire , <br />
-                  Plot No.18 & 19, Sector -15 , CBD  Belapur , Navi Mumbai-400614
 
+                  CONCEPT DESIGN CELL <br />Main Office: G-19 ,1ST Floor , Neighbourhood Shopping Complex , <br />Sector -04 , Nerul , Navi Mumbai -400706
+                </p>
+                <p className="text-section-dark-foreground/60 text-sm">
+                  Branch Office: 1208, BWing , Shelton Saphhire , Plot No.18 & 19, Sector -15 , CBD Belapur , Navi Mumbai-400614
                 </p>
               </div>
             </div>

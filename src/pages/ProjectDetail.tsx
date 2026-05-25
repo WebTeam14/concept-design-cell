@@ -46,15 +46,15 @@ export default function ProjectDetail() {
                 {project.images.map((image, index) => (
                   <div 
                     key={index} 
-                    className={`group relative border border-border/40 p-2 hover:border-primary transition-colors duration-500 overflow-hidden ${
+                    className={`group relative border border-border/40 hover:border-primary transition-colors duration-500 overflow-hidden ${
                       index === 0 ? "md:col-span-2 aspect-video md:aspect-[16/10]" : "aspect-square"
                     }`}
                   >
-                    <div className="w-full h-full overflow-hidden">
+                    <div className="w-full h-full">
                       <img
                         src={image}
                         alt={`${project.title} - ${index + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105"
                       />
                     </div>
                   </div>
@@ -94,6 +94,20 @@ export default function ProjectDetail() {
                     <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Year</p>
                     <p className="text-lg font-light tracking-wide">{project.year}</p>
                   </div>
+
+                  {project.plotArea && project.plotArea.trim() && (
+                    <div className="space-y-2">
+                      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Plot Area</p>
+                      <p className="text-lg font-light tracking-wide">{project.plotArea}</p>
+                    </div>
+                  )}
+
+                  {project.client && project.client.trim() && (
+                    <div className="space-y-2">
+                      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Client</p>
+                      <p className="text-lg font-light tracking-wide">{project.client}</p>
+                    </div>
+                  )}
 
                   <div className="space-y-2">
                     <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">Description</p>
