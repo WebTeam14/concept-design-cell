@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import home from "@/assets/1.jpg";
-import heroBg3 from "@/assets/project-1.jpg";
+import home from "@/assets/slider/slider.jpeg";
+import heroBg3 from "@/assets/slider/SLIDER1.jpg";
 
 // Add this to your index.html <head>:
 // <style>@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');</style>
@@ -57,8 +57,7 @@ export default function HeroSection() {
           <img
             src={slides[current].image}
             alt={slides[current].title}
-            className={`w-full h-full object-cover object-center ${slides[current].isPhoto ? "grayscale contrast-125 brightness-110" : ""
-              }`}
+            className="w-full h-full object-fill"
           />
           <div className="absolute inset-0 bg-black/40 md:bg-black/35" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 opacity-90" />

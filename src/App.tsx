@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -44,15 +45,15 @@ const MainContent = () => {
 
       <AnimatePresence mode="popLayout">
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects/completed" element={<CompletedProjects />} />
-          <Route path="/projects/ongoing" element={<OngoingProjects />} />
-          <Route path="/projects/liasioning" element={<LiasioningProjects />} />
-          <Route path="/projects/upcoming" element={<UpcomingProjects />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/" element={<ErrorBoundary><Index /></ErrorBoundary>} />
+          <Route path="/about" element={<ErrorBoundary><About /></ErrorBoundary>} />
+          <Route path="/services" element={<ErrorBoundary><Services /></ErrorBoundary>} />
+          <Route path="/contact" element={<ErrorBoundary><Contact /></ErrorBoundary>} />
+          <Route path="/projects/completed" element={<ErrorBoundary><CompletedProjects /></ErrorBoundary>} />
+          <Route path="/projects/ongoing" element={<ErrorBoundary><OngoingProjects /></ErrorBoundary>} />
+          <Route path="/projects/liasioning" element={<ErrorBoundary><LiasioningProjects /></ErrorBoundary>} />
+          <Route path="/projects/upcoming" element={<ErrorBoundary><UpcomingProjects /></ErrorBoundary>} />
+          <Route path="/projects/:id" element={<ErrorBoundary><ProjectDetail /></ErrorBoundary>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

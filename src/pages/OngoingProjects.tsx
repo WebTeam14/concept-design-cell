@@ -59,11 +59,20 @@ export default function OngoingProjects() {
                   onClick={() => navigate(`/projects/${project.id}`)}
                 >
                   <div className="w-full relative">
-                    <img
-                      src={project.images[0]}
-                      alt={project.title}
-                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+                    {project.images[0] ? (
+                      <img
+                        src={project.images[0]}
+                        alt={project.title}
+                        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="w-full h-52 bg-gradient-to-br from-primary/10 to-primary/5 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 className="font-display text-base font-bold tracking-widest text-foreground/70 uppercase">
+                          {project.title}
+                        </h3>
+                        <div className="w-8 h-[1px] bg-primary/50 mt-3" />
+                      </div>
+                    )}
                     
                     {/* Status Badge */}
                     <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-semibold tracking-widest uppercase px-3 py-1 z-10">

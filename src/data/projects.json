@@ -14,6 +14,20 @@
     ]
   },
   {
+    "id": "Antara",
+    "title": "Antara",
+    "category": "Commercial Cum Residential",
+    "location": "286/12, Nerul, Navi Mumbai",
+    "year": "",
+    "plot area": "1723 sq.ft.",
+    "client": "",
+    "status": "completed",
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "antara1.jpg"
+    ]
+  },
+  {
     "id": "concept-design",
     "title": "Concept Design",
     "category": "Commercial",
@@ -323,39 +337,47 @@
     "category": "Proposed Residential Development",
     "location": "Maharashtra, India",
     "year": "Upcoming",
-    "description": "Liasioning for proposed residential development.",
+    "description": "Liaisoning for proposed residential development.",
     "status": "upcoming",
-    "imageFolder": "Upcoming"
+    "imageFolder": "Upcoming",
+    "plot area": "50224.67 SQ.M",
+    "client": "Ramindri Group"
   },
   {
-    "id": "waverle-liaisoning",
-    "title": "Waverle",
+    "id": "waverle-karjat-liaisoning",
+    "title": "Waverle @Karjat",
     "category": "Proposed Residential Development",
     "location": "Maharashtra, India",
     "year": "Upcoming",
-    "description": "Liasioning for proposed residential development.",
+    "description": "Liaisoning for proposed residential development.",
     "status": "upcoming",
-    "imageFolder": "Upcoming"
+    "imageFolder": "Upcoming",
+    "plot area": "36643.992 SQM",
+    "client": "Ashitaa Housing Ltd."
   },
   {
-    "id": "godrej-ashiana-liaisoning",
-    "title": "Godrej (Ashiana Housing Ltd)",
+    "id": "godrej-itp-panvel-liaisoning",
+    "title": "Godrej ITP Panvel",
     "category": "Proposed Residential Development",
     "location": "Maharashtra, India",
     "year": "Upcoming",
-    "description": "Liasioning for proposed residential development.",
+    "description": "Liaisoning for proposed residential development.",
     "status": "upcoming",
-    "imageFolder": "Upcoming"
+    "imageFolder": "Upcoming",
+    "plot area": "24350 SQMT",
+    "client": "Ashiana Housing Ltd."
   },
   {
-    "id": "godrej-studio",
+    "id": "godrej-studio-liaisoning",
     "title": "Godrej Studio",
     "category": "Proposed Development",
     "location": "Maharashtra, India",
     "year": "Upcoming",
-    "description": "Liasioning for proposed development at Godrej Studio.",
+    "description": "Liaisoning for proposed development at Godrej Studio.",
     "status": "upcoming",
-    "imageFolder": "Upcoming"
+    "imageFolder": "Upcoming",
+    "plot area": "34340 SQMT",
+    "client": "Godrej Properties"
   },
   {
     "id": "lt-layout-approval",
@@ -364,7 +386,82 @@
     "location": "Maharashtra, India",
     "year": "Upcoming",
     "description": "Layout approval and development clearance.",
-    "status": "upcoming",
-    "imageFolder": "Upcoming"
+    "status": "upcoming"
+  },
+  {
+    "id": "Antalya",
+    "title": "Antalya",
+    "category": "COMMERCIAL CUM RESIDENTIAL",
+    "location": "CBD BELAPUR , PLOT NO.49, SECTOR -15",
+    "year": "2023-2024",
+    "plot area": "2629.05 SQ.M",
+    "client": "SARA REALTY",
+    "description": "",
+    "status": "completed",
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "antara1.jpg"
+    ]
+  },
+  {
+    "id": "ND GARDEN",
+    "title": "ND GARDEN",
+    "category": "RESIDENTIAL",
+    "location": "ULWE, PLOT NO. 170,  SECTOR 19",
+    "year": "2023-2025",
+    "plot area": "699.88 SQ.M",
+    "client": "GAJANAND DEVELOPERS",
+    "description": "",
+    "status": "completed",
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "MD-Garden.jpeg"
+    ]
+  },
+  {
+    "id": "SWARG",
+    "title": "SWARG",
+    "category": "RESIDENTIAL",
+    "location": "NERUL, PLOT NO. 218 & 219,  SECTOR-21",
+    "year": "2023",
+    "plot area": "815.35 SQ.M",
+    "client": "V R BUILDERS",
+    "description": "",
+    "status": "completed",
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "Swarg.jpeg"
+    ]
+  },
+  {
+    "id": "TODAYS AAMOD",
+    "title": "TODAYS AAMOD",
+    "category": "RESIDENTIAL CUM COMMERCIAL",
+    "location": "NANDGAON, PANVEL",
+    "year": "2021-2025",
+    "plot area": "10840.00 SQ.M",
+    "client": "V R BUILDERS",
+    "description": "",
+    "status": "completed",
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "Todays_Amod.jpeg"
+    ]
+  },
+  {
+    "id": "SANSKRITI",
+    "title": "SANSKRITI",
+    "category": "RESIDENTIAL",
+    "location": "ULWE, PLOT NO. 32, SECTOR - 19",
+    "year": "2017-2021",
+    "plot area": "999.98 SQ.M",
+    "client": "V R BUILDERS",
+    "description": "",
+    "status": "completed",
+    "imageFolder": "Completedproject",
+    "imageFiles": [
+      "Sanskriti1.jpeg",
+      "Sanskriti2.jpeg"
+    ]
   }
 ]

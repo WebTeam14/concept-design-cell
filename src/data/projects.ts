@@ -24,8 +24,12 @@ const allImages = import.meta.glob("/src/assets/**/*.{jpg,jpeg,png,JPG,JPEG,PNG}
 import sketch2 from "@/assets/hero-sketch-2.png";
 
 // Helper to convert the automated image pool into a list for each project
-const getProjectImages = (folderName: string, projectId: string, imageFiles?: string[]) => {
+const getProjectImages = (folderName: string | undefined, projectId: string, imageFiles?: string[]) => {
   const images: string[] = [];
+
+  // Guard: if no folder is specified, return empty so fallback image is used
+  if (!folderName) return images;
+
   const searchPath = folderName.toLowerCase();
   
   // If specific image files are provided (e.g. for completed projects), use exact matches

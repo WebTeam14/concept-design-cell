@@ -52,7 +52,7 @@ export default function CompletedProjects() {
               {completedProjects.map((project, i) => (
                 <div
                   key={project.id}
-                  className={`break-inside-avoid mb-4 group cursor-pointer relative border border-border/40 hover:border-primary transition-colors duration-500 overflow-hidden rounded-xl ${
+                  className={`break-inside-avoid inline-block w-full mb-4 group cursor-pointer relative border border-border/40 hover:border-primary transition-colors duration-500 overflow-hidden rounded-xl ${
                     isVisible ? "animate-fade-up" : "opacity-0"
                   }`}
                   style={{ animationDelay: `${0.1 + i * 0.1}s` }}
