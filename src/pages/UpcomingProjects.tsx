@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { upcomingProjects } from "@/data/projects";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageWrapper from "@/components/PageWrapper";
 import PageHeader from "@/components/PageHeader";
 
 export default function UpcomingProjects() {
-  const { ref, isVisible } = useScrollReveal();
   const navigate = useNavigate();
 
   return (
@@ -19,8 +17,7 @@ export default function UpcomingProjects() {
           description="Proposed developments, layout approvals, and upcoming architectural projects on the horizon."
         />
 
-        {/* Grid */}
-        <div ref={ref} className="container mx-auto px-4 py-20 md:py-28">
+        <div className="container mx-auto px-4 py-20 md:py-28">
           {/* Navigation Tabs */}
           <div className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-8 mb-12 border-b border-border/10 pb-6">
             {[
@@ -47,59 +44,46 @@ export default function UpcomingProjects() {
             })}
           </div>
 
-          <div className="w-full">
-            {upcomingProjects.length === 0 ? (
-              <div className="text-center py-20 border border-dashed border-border rounded-xl">
-                <p className="text-muted-foreground">No upcoming projects listed at the moment.</p>
-              </div>
-            ) : (
-              <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 [column-fill:_balance] box-border">
-                {upcomingProjects.map((project, i) => (
+          {upcomingProjects.length === 0 ? (
+            <div className="text-center py-20 border border-dashed border-border rounded-xl">
+              <p className="text-muted-foreground">No upcoming projects listed at the moment.</p>
+            </div>
+          ) : (
+            <div className="relative w-full overflow-hidden py-16 md:py-20 border-y border-border/20">
+              <div className="flex w-max animate-marquee space-x-8 md:space-x-16 px-4 md:px-8 items-center">
+                {upcomingProjects.map((project) => (
                   <div
                     key={project.id}
-                    className={`break-inside-avoid inline-block w-full mb-4 group cursor-pointer relative border border-border/40 hover:border-primary transition-colors duration-500 overflow-hidden rounded-xl bg-card/10 backdrop-blur-sm ${
-                      isVisible ? "animate-fade-up" : "opacity-0"
-                    }`}
-                    style={{ animationDelay: `${0.1 + i * 0.1}s` }}
+                    className="flex-shrink-0 cursor-pointer hover:text-primary transition-colors duration-300 group flex items-center"
                     onClick={() => navigate(`/projects/${project.id}`)}
                   >
-                    <div className="w-full relative">
-                      {project.images[0] ? (
-                        <img
-                          src={project.images[0]}
-                          alt={project.title}
-                          className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-                        />
-                      ) : (
-                        <div className="w-full h-52 bg-gradient-to-br from-primary/10 to-primary/5 flex flex-col items-center justify-center p-6 text-center">
-                          <h3 className="font-display text-base font-bold tracking-widest text-foreground/70 uppercase">
-                            {project.title}
-                          </h3>
-                          <div className="w-8 h-[1px] bg-primary/50 mt-3" />
-                        </div>
-                      )}
-                      
-                      {/* Status Badge */}
-                      <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-semibold tracking-widest uppercase px-3 py-1 z-10">
-                        Upcoming
-                      </div>
-
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center">
-                        <h3 className="font-display text-xl font-bold tracking-widest text-white uppercase mb-4">
-                          {project.title}
-                        </h3>
-                        <div className="w-12 h-[1px] bg-primary mb-4" />
-                        <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/80">
-                          {project.category}
-                        </p>
-                      </div>
-                    </div>
+                    <span className="text-sm md:text-lg lg:text-2xl font-bold tracking-wide whitespace-nowrap uppercase">
+                      {project.title}
+                    </span>
+                    <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-muted-foreground/60 ml-2 md:ml-4 uppercase hidden md:inline">
+                      {project.category}
+                    </span>
+                    <span className="mx-4 md:mx-8 text-primary/30 text-xl md:text-3xl font-light">|</span>
+                  </div>
+                ))}
+                {upcomingProjects.map((project) => (
+                  <div
+                    key={`dup-${project.id}`}
+                    className="flex-shrink-0 cursor-pointer hover:text-primary transition-colors duration-300 group flex items-center"
+                    onClick={() => navigate(`/projects/${project.id}`)}
+                  >
+                    <span className="text-sm md:text-lg lg:text-2xl font-bold tracking-wide whitespace-nowrap uppercase">
+                      {project.title}
+                    </span>
+                    <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-muted-foreground/60 ml-2 md:ml-4 uppercase hidden md:inline">
+                      {project.category}
+                    </span>
+                    <span className="mx-4 md:mx-8 text-primary/30 text-xl md:text-3xl font-light">|</span>
                   </div>
                 ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         <Footer />

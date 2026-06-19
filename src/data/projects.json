@@ -397,10 +397,11 @@
     "plot area": "2629.05 SQ.M",
     "client": "SARA REALTY",
     "description": "",
-    "status": "completed",
-    "imageFolder": "Completedproject",
+    "status": "liasioning",
+    "imageFolder": "LIASIONING/ANTALYA",
     "imageFiles": [
-      "antara1.jpg"
+      "Antalya1.jpg",
+      "Antalya2.jpg"
     ]
   },
   {

@@ -108,7 +108,7 @@ export default {
         "fade-in": "fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "slide-left": "slide-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "slide-right": "slide-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "marquee": "marquee 25s linear infinite",
+        "marquee": "marquee 40s linear infinite",
       },
     },
   },
