@@ -36,7 +36,7 @@ export default function TeamSection() {
           </motion.p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           {teamMembers.map((member, index) => (
             <MemberCard key={member.id} member={member} index={index} isVisible={isVisible} />
           ))}

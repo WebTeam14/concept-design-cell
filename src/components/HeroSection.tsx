@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import home from "@/assets/slider/slider.jpeg";
-import heroBg3 from "@/assets/slider/SLIDER1.jpg";
+import slider1 from "@/assets/Slider1.jpeg";
+import slider2 from "@/assets/Slider2.jpeg";
+import slider3 from "@/assets/slider3.jpeg";
 
 // Add this to your index.html <head>:
 // <style>@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');</style>
@@ -11,21 +12,27 @@ import heroBg3 from "@/assets/slider/SLIDER1.jpg";
 const slides = [
   {
     id: 1,
-    image: home,
+    image: slider1,
     title: "Innovative Architecture for Tomorrow",
     subtitle: "Designing spaces that inspire, endure, and elevate lifestyles.",
     link: "#contact",
     cta: "Get in Touch",
-    isPhoto: false,
+  },
+  {
+    id: 2,
+    image: slider2,
+    title: "Crafting Exceptional Spaces",
+    subtitle: "Blending functionality and aesthetics to create unique living environments.",
+    link: "#services",
+    cta: "Our Services",
   },
   {
     id: 3,
-    image: heroBg3,
+    image: slider3,
     title: "Defining the Contemporary Skyline",
     subtitle: "Transforming functional commercial spaces into iconic landmarks.",
-    link: "#services",
-    cta: "Our Services",
-    isPhoto: true,
+    link: "#contact",
+    cta: "Get in Touch",
   },
 ];
 
@@ -42,7 +49,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-[80vh] sm:h-[85vh] md:h-screen min-h-[500px] w-full flex items-center justify-center overflow-hidden bg-[#111111]"
+      className="relative h-screen min-h-[500px] w-full flex items-center justify-center overflow-hidden bg-[#111111]"
     >
       {/* Background Slides */}
       <AnimatePresence initial={false}>
@@ -57,7 +64,7 @@ export default function HeroSection() {
           <img
             src={slides[current].image}
             alt={slides[current].title}
-            className="w-full h-full object-fill"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40 md:bg-black/35" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 opacity-90" />
