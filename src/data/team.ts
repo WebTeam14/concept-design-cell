@@ -1,5 +1,5 @@
-import team1 from "@/assets/Ar.PiyushTak.jpeg";
-import minakshi from "@/assets/Ar.MinakshiPatil.png";
+import team1 from "@/assets/Ar.PiyushTak (2).jpeg";
+import minakshi from "@/assets/Ar.MinakshiPatil.jpeg";
 
 export interface Member {
   id: string;

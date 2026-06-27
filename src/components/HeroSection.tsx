@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import slider1 from "@/assets/Slider1.jpeg";
 import slider2 from "@/assets/Slider2.jpeg";
 import slider3 from "@/assets/slider3.jpeg";
+import slider4 from "@/assets/Ongoingprojects/SHUBHAM ARTESIA/3959_VASHI RESIDENTIAL_Image_02.jpg";
 
 // Add this to your index.html <head>:
 // <style>@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');</style>
@@ -12,9 +12,9 @@ import slider3 from "@/assets/slider3.jpeg";
 const slides = [
   {
     id: 1,
-    image: slider1,
-    title: "Innovative Architecture for Tomorrow",
-    subtitle: "Designing spaces that inspire, endure, and elevate lifestyles.",
+    image: slider3,
+    title: "Defining the Contemporary Skyline",
+    subtitle: "Transforming functional commercial spaces into iconic landmarks.",
     link: "#contact",
     cta: "Get in Touch",
   },
@@ -28,9 +28,9 @@ const slides = [
   },
   {
     id: 3,
-    image: slider3,
-    title: "Defining the Contemporary Skyline",
-    subtitle: "Transforming functional commercial spaces into iconic landmarks.",
+    image: slider4,
+    title: "Innovative Architecture for Tomorrow",
+    subtitle: "Designing spaces that inspire, endure, and elevate lifestyles.",
     link: "#contact",
     cta: "Get in Touch",
   },
