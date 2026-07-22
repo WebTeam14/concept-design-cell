@@ -230,7 +230,7 @@
   {
     "id": "jewel-of-panvel",
     "title": "Jewel of Panvel",
-    "category": "Commercial",
+    "category": "Commercial Cum Residential",
     "location": "Panvel, Navi Mumbai",
     "year": "2025",
     "description": "A prestigious commercial project in Panvel featuring a modern glass-and-steel facade with premium office and retail spaces.",
@@ -305,7 +305,7 @@
     "location": "Maharashtra, India",
     "year": "2025",
     "description": "Liasioning project for Arihant Amisha.",
-    "status": "liasioning",
+    "status": "ongoing",
     "imageFolder": "LIASIONING/ARIHANT AMISHA"
   },
   {
@@ -319,13 +319,13 @@
     "imageFolder": "LIASIONING/ARIHANT ASPIRE"
   },
   {
-    "id": "sara-realty",
-    "title": "SARA REALTY",
+    "id": "Antalya sara-realty",
+    "title": "ANTALYA SARA REALTY",
     "category": "Liasioning",
     "location": "Maharashtra, India",
     "year": "2025",
     "description": "Liasioning project for Sara Realty.",
-    "status": "liasioning",
+    "status": "completed",
     "imageFolder": "LIASIONING/SARA REALTY"
   },
   {
@@ -391,20 +391,28 @@
     "client": "Godrej Properties"
   },
   {
-    "id": "Antalya",
-    "title": "Antalya",
-    "category": "COMMERCIAL CUM RESIDENTIAL",
-    "location": "286/12, NERUL , NAVI MUMBAI.",
-    "year": "2023-2024",
-    "plot area": "1723 Sq.Ft",
-    "client": "",
-    "description": "",
-    "status": "liasioning",
-    "imageFolder": "LIASIONING/ANTALYA",
-    "imageFiles": [
-      "Antalya1.jpg",
-      "Antalya2.jpg"
-    ]
+    "id": "TERNA School at Nerul - For Terna Trust",
+    "title": "TERNA School at Nerul",
+    "category": "Proposed Development",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Liaisoning for proposed development at Godrej Studio.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming",
+    "plot area": "",
+    "client": "Terna Trust"
+  },
+  {
+    "id": "Ashiyana Housing Ltd",
+    "title": "Ashiyana Housing Ltd",
+    "category": "Proposed Development",
+    "location": "Maharashtra, India",
+    "year": "Upcoming",
+    "description": "Liaisoning for proposed development at Godrej Studio.",
+    "status": "upcoming",
+    "imageFolder": "Upcoming",
+    "plot area": "",
+    "client": "Ashiyana Housing Ltd"
   },
   {
     "id": "ND GARDEN",
