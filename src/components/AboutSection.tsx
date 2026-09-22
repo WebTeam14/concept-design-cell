@@ -7,7 +7,7 @@ export default function AboutSection() {
   const { ref: parallaxRef, offset } = useParallax(0.1);
 
   return (
-    <section id="about" className="relative py-28 md:py-40 bg-background overflow-hidden">
+    <section id="about" className="relative py-12 md:py-20 bg-background overflow-hidden">
       {/* Decorative Background Number */}
       <div className="absolute top-10 right-10 text-[20rem] font-display font-bold text-muted/10 leading-none select-none -z-10">
         01

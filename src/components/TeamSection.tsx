@@ -7,25 +7,25 @@ export default function TeamSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="py-24 md:py-32 bg-background overflow-hidden">
+    <section className="py-12 md:py-20 bg-background overflow-hidden">
       <div ref={ref} className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-sm font-medium tracking-widest uppercase text-primary mb-3"
           >
             Our Experts
-          </motion.p>
+          </motion.p> */}
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6"
+            className="font-display text-3xl md:text-4xl font-bold text-primary mb-6"
           >
-            Meet the Team
+            OUR EXPERTS
           </motion.h2>
 
           <motion.p
@@ -39,13 +39,7 @@ export default function TeamSection() {
           </motion.p>
         </div>
 
-        <div
-          className={`grid gap-8 md:gap-12 mx-auto justify-items-center ${
-            teamMembers.length === 1
-              ? "grid-cols-1 max-w-sm"
-              : "grid-cols-1 md:grid-cols-2 max-w-5xl"
-          }`}
-        >
+        <div className="grid gap-12 md:gap-20 mx-auto justify-items-center grid-cols-1 w-full max-w-2xl">
           {teamMembers.map((member, index) => (
             <MemberCard
               key={member.id}

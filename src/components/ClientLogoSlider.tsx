@@ -5,8 +5,9 @@ import img4 from "@/assets/Client/4.JPG";
 import img5 from "@/assets/Client/5.JPG";
 import img6 from "@/assets/Client/6.JPG";
 import img7 from "@/assets/Client/7.JPG";
+import img8 from "@/assets/Client/BAVISKAR GROUP.PNG";
 
-const clientLogos = [img1, img2, img3, img4, img5, img6, img7];
+const clientLogos = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 export default function ClientLogoSlider() {
   return (

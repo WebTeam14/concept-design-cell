@@ -15,7 +15,7 @@ const fadeUp = (delay = 0): MotionProps => ({
 // ─── 1. Vision + Mission ─────────────────────────────────────────────────────
 function VisionMission() {
   return (
-    <section className="py-24 md:py-32 bg-foreground text-background">
+    <section className="py-12 md:py-20 bg-foreground text-background">
       <div className="container mx-auto px-4">
         <motion.p
           {...fadeUp()}
@@ -90,7 +90,7 @@ const milestones = [
 
 function Timeline() {
   return (
-    <section className="py-24 md:py-32 bg-muted/30">
+    <section className="py-12 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.p
           {...fadeUp()}
@@ -153,7 +153,7 @@ function Timeline() {
 // ─── 3. Philosophy ───────────────────────────────────────────────────────────
 function Philosophy() {
   return (
-    <section className="py-24 md:py-32 bg-foreground text-background">
+    <section className="py-12 md:py-20 bg-foreground text-background">
       <div className="container mx-auto px-4">
         <motion.p
           {...fadeUp()}
